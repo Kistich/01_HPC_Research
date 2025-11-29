@@ -1,0 +1,82 @@
+Comprehensive GPU Metrics Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report presents a comprehensive analysis of GPU performance metrics across multiple server groups.
+The analysis covers the following metrics:
+- GPU Utilization (%)
+- Memory Utilization (%)
+- Graphics Clock Speed (MHz)
+- Memory Clock Speed (MHz)
+- SM Clock Speed (MHz)
+- Video Clock Speed (MHz)
+- Power Draw (W)
+- Memory Allocation (MB)
+- Average GPU Utilization (%)
+
+Key Findings by Metric
+--------------------
+
+GPU Utilization:
+  - GPU utilization patterns can indicate workload distribution effectiveness.
+  - Consistently high utilization may indicate potential bottlenecks.
+  - Low utilization suggests potential for workload consolidation.
+
+Memory Utilization:
+  - Memory utilization shows how effectively GPU memory is being used.
+  - High memory utilization may indicate potential memory bottlenecks.
+  - Optimal memory utilization depends on workload characteristics.
+
+Clock Speeds:
+  - Clock speeds provide insights into GPU performance capabilities.
+  - Lower than expected clock speeds may indicate thermal throttling.
+  - Clock speed variations can impact workload performance consistency.
+
+Power Draw:
+  - Power consumption directly impacts operational costs.
+  - High power draw during low utilization periods indicates inefficiency.
+  - Power patterns can reveal opportunities for workload scheduling optimization.
+
+Memory Allocation:
+  - Memory allocation shows how applications request GPU memory.
+  - High allocations with low utilization may indicate memory leaks or inefficient code.
+  - Memory allocation patterns can guide application optimization efforts.
+
+Cross-Metric Analysis:
+  - Correlation between utilization and power draw can identify efficiency opportunities.
+  - Relationship between clock speeds and utilization reveals throttling behavior.
+  - Memory utilization vs. allocation patterns indicate memory management efficiency.
+
+Recommendations
+--------------------
+1. Monitor servers with consistently high GPU or memory utilization for potential bottlenecks.
+2. Consider workload consolidation for server groups with consistently low utilization.
+3. Investigate power optimization opportunities, especially during low-utilization periods.
+4. Analyze workload scheduling to better distribute resource demand across time.
+5. Compare GPU performance metrics with application SLAs to ensure resource allocation aligns with needs.
+
+Methodology
+--------------------
+This analysis was performed using data extracted from GPU metric logs. The following analytical methods were applied:
+- Time-series analysis of utilization patterns (daily, weekly, monthly)
+- Statistical analysis of metric distributions
+- Threshold-based identification of high-utilization periods
+- Heatmap visualization of metric patterns by time of day and day of week
+- Group-based comparison of performance across server categories
+
+Conclusion
+--------------------
+This comprehensive analysis provides valuable insights into GPU performance patterns across the server infrastructure.
+The findings can guide infrastructure optimization, workload scheduling, and resource allocation decisions.
+Regular monitoring of these metrics can help maintain optimal performance and efficiency over time.
+
+Appendix: Individual Analysis Folders
+--------------------
+Detailed reports for each Excel file can be found in the following locations:
+
+
+Performance Details
+--------------------
+This analysis was performed using parallel processing with 9 concurrent processes.
+The server has 128 CPU cores available.

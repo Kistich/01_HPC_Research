@@ -1,0 +1,33 @@
+SM Clock Speed Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average SM Clock Speed: 973491311.09 MHz
+  Maximum SM Clock Speed: 1410000000.00 MHz
+  Minimum SM Clock Speed: 210000000.00 MHz
+  Standard Deviation: 538193301.19 MHz
+  Hours Above 1200.0 MHz: 57760.42
+  Hours Above 1500 MHz: 57760.42
+  Hours Above 1650.0000000000002 MHz: 57760.42
+
+GPU2:
+  Server Count: 15
+  Average SM Clock Speed: 878452484.63 MHz
+  Maximum SM Clock Speed: 1410000000.00 MHz
+  Minimum SM Clock Speed: 210000000.00 MHz
+  Standard Deviation: 568223936.92 MHz
+  Hours Above 1200.0 MHz: 16745.28
+  Hours Above 1500 MHz: 16745.28
+  Hours Above 1650.0000000000002 MHz: 16745.28
+
+GPU3:
+  Server Count: 14
+  Average SM Clock Speed: 846943830.59 MHz
+  Maximum SM Clock Speed: 1740000000.00 MHz
+  Minimum SM Clock Speed: 0.00 MHz
+  Standard Deviation: 824417927.52 MHz
+  Hours Above 1200.0 MHz: 8670.90
+  Hours Above 1500 MHz: 8670.90
+  Hours Above 1650.0000000000002 MHz: 8670.90
+

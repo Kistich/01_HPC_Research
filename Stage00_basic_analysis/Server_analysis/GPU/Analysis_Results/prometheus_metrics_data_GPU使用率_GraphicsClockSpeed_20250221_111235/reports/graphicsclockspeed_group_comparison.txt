@@ -1,0 +1,33 @@
+Graphics Clock Speed Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Graphics Clock Speed: 973535003.46 MHz
+  Maximum Graphics Clock Speed: 1410000000.00 MHz
+  Minimum Graphics Clock Speed: 210000000.00 MHz
+  Standard Deviation: 538180457.28 MHz
+  Hours Above 1200.0 MHz: 57760.72
+  Hours Above 1500 MHz: 57760.72
+  Hours Above 1650.0000000000002 MHz: 57760.72
+
+GPU2:
+  Server Count: 15
+  Average Graphics Clock Speed: 878760291.45 MHz
+  Maximum Graphics Clock Speed: 1410000000.00 MHz
+  Minimum Graphics Clock Speed: 210000000.00 MHz
+  Standard Deviation: 568171912.49 MHz
+  Hours Above 1200.0 MHz: 16737.20
+  Hours Above 1500 MHz: 16737.20
+  Hours Above 1650.0000000000002 MHz: 16737.20
+
+GPU3:
+  Server Count: 14
+  Average Graphics Clock Speed: 846945096.35 MHz
+  Maximum Graphics Clock Speed: 1740000000.00 MHz
+  Minimum Graphics Clock Speed: 0.00 MHz
+  Standard Deviation: 824427609.69 MHz
+  Hours Above 1200.0 MHz: 8669.70
+  Hours Above 1500 MHz: 8669.70
+  Hours Above 1650.0000000000002 MHz: 8669.70
+

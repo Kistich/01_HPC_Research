@@ -1,0 +1,33 @@
+Average GPU Utilization Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Average GPU Utilization: 0.44 %
+  Maximum Average GPU Utilization: 1.00 %
+  Minimum Average GPU Utilization: 0.00 %
+  Standard Deviation: 0.38 %
+  Hours Above 40 %: 0.00
+  Hours Above 70 %: 0.00
+  Hours Above 80 %: 0.00
+
+GPU2:
+  Server Count: 15
+  Average Average GPU Utilization: 0.36 %
+  Maximum Average GPU Utilization: 1.00 %
+  Minimum Average GPU Utilization: 0.00 %
+  Standard Deviation: 0.34 %
+  Hours Above 40 %: 0.00
+  Hours Above 70 %: 0.00
+  Hours Above 80 %: 0.00
+
+GPU3:
+  Server Count: 14
+  Average Average GPU Utilization: 0.23 %
+  Maximum Average GPU Utilization: 1.00 %
+  Minimum Average GPU Utilization: 0.00 %
+  Standard Deviation: 0.30 %
+  Hours Above 40 %: 0.00
+  Hours Above 70 %: 0.00
+  Hours Above 80 %: 0.00
+

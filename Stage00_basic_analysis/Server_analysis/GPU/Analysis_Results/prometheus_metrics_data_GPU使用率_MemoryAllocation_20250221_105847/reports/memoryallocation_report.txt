@@ -1,0 +1,49 @@
+Memory Allocation Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes Memory Allocation data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average Memory Allocation: 25472092597.48 MB
+2. Maximum Memory Allocation: 85173731328.00 MB
+3. Minimum Memory Allocation: 0.00 MB
+
+Top 5 Servers by Average Memory Allocation
+--------------------
+1. gpu1-25 (GPU1): 46789018976.87 MB
+2. gpu1-30 (GPU1): 44712618633.22 MB
+3. gpu1-23 (GPU1): 43882255230.36 MB
+4. gpu1-19 (GPU1): 42524417690.23 MB
+5. gpu1-3 (GPU1): 41949249329.43 MB
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average Memory Allocation: 29476726373.61 MB
+  Maximum Memory Allocation: 85173731328.00 MB
+  Hours Above 8000 MB: 57846.32
+
+GPU2 (15 servers):
+  Average Memory Allocation: 23684787611.06 MB
+  Maximum Memory Allocation: 85173731328.00 MB
+  Hours Above 8000 MB: 16640.08
+
+GPU3 (14 servers):
+  Average Memory Allocation: 11217587106.58 MB
+  Maximum Memory Allocation: 50820284416.00 MB
+  Hours Above 8000 MB: 14152.33
+
+Recommendations
+--------------------
+1. Memory allocation is consistently high. Monitor for potential memory issues.
+2. The following servers have consistently high memory allocation and may require attention: gpu1-1 (GPU1), gpu1-2 (GPU1), gpu1-3 (GPU1).
+
+Conclusion
+--------------------
+This analysis provides insights into Memory Allocation patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing memory allocation distribution by day and hour.

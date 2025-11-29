@@ -1,0 +1,48 @@
+GPU Utilization Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes GPU Utilization data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average GPU Utilization: 0.41 %
+2. Maximum GPU Utilization: 1.00 %
+3. Minimum GPU Utilization: 0.00 %
+
+Top 5 Servers by Average GPU Utilization
+--------------------
+1. gpu1-19 (GPU1): 0.67 %
+2. gpu1-30 (GPU1): 0.67 %
+3. gpu1-23 (GPU1): 0.66 %
+4. gpu1-25 (GPU1): 0.63 %
+5. gpu1-35 (GPU1): 0.59 %
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average GPU Utilization: 0.45 %
+  Maximum GPU Utilization: 1.00 %
+  Hours Above 80 %: 0.00
+
+GPU2 (15 servers):
+  Average GPU Utilization: 0.40 %
+  Maximum GPU Utilization: 1.00 %
+  Hours Above 80 %: 0.00
+
+GPU3 (14 servers):
+  Average GPU Utilization: 0.27 %
+  Maximum GPU Utilization: 1.00 %
+  Hours Above 80 %: 0.00
+
+Recommendations
+--------------------
+1. Overall utilization is relatively low. Consider consolidating workloads to fewer GPUs.
+
+Conclusion
+--------------------
+This analysis provides insights into GPU Utilization patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing gpu utilization distribution by day and hour.

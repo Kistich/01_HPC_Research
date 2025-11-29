@@ -1,0 +1,33 @@
+Memory Allocation Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Memory Allocation: 29476726373.61 MB
+  Maximum Memory Allocation: 85173731328.00 MB
+  Minimum Memory Allocation: 1048576.00 MB
+  Standard Deviation: 32001607913.12 MB
+  Hours Above 5600.0 MB: 57846.32
+  Hours Above 8000 MB: 57846.32
+  Hours Above 9600.0 MB: 57846.32
+
+GPU2:
+  Server Count: 15
+  Average Memory Allocation: 23684787611.06 MB
+  Maximum Memory Allocation: 85173731328.00 MB
+  Minimum Memory Allocation: 0.00 MB
+  Standard Deviation: 29188597883.61 MB
+  Hours Above 5600.0 MB: 16640.08
+  Hours Above 8000 MB: 16640.08
+  Hours Above 9600.0 MB: 16640.08
+
+GPU3:
+  Server Count: 14
+  Average Memory Allocation: 11217587106.58 MB
+  Maximum Memory Allocation: 50820284416.00 MB
+  Minimum Memory Allocation: 4194304.00 MB
+  Standard Deviation: 16522959677.68 MB
+  Hours Above 5600.0 MB: 14152.33
+  Hours Above 8000 MB: 14152.33
+  Hours Above 9600.0 MB: 14152.33
+

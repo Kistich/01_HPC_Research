@@ -1,0 +1,49 @@
+Power Draw Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes Power Draw data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average Power Draw: 154.64 W
+2. Maximum Power Draw: 585.12 W
+3. Minimum Power Draw: 13.06 W
+
+Top 5 Servers by Average Power Draw
+--------------------
+1. gpu1-30 (GPU1): 253.06 W
+2. gpu1-23 (GPU1): 251.00 W
+3. gpu1-19 (GPU1): 250.40 W
+4. gpu1-26 (GPU1): 220.59 W
+5. gpu1-44 (GPU1): 220.12 W
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average Power Draw: 170.20 W
+  Maximum Power Draw: 585.12 W
+  Hours Above 250 W: 17296.33
+
+GPU2 (15 servers):
+  Average Power Draw: 150.14 W
+  Maximum Power Draw: 578.58 W
+  Hours Above 250 W: 4197.25
+
+GPU3 (14 servers):
+  Average Power Draw: 96.46 W
+  Maximum Power Draw: 341.78 W
+  Hours Above 250 W: 1852.23
+
+Recommendations
+--------------------
+1. Power consumption is within expected ranges.
+2. The following servers have consistently high power draw and may require attention: gpu1-19 (GPU1), gpu1-23 (GPU1), gpu1-30 (GPU1).
+
+Conclusion
+--------------------
+This analysis provides insights into Power Draw patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing power draw distribution by day and hour.

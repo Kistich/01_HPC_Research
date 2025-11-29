@@ -1,0 +1,33 @@
+Memory Clock Speed Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Memory Clock Speed: 1593000000.00 MHz
+  Maximum Memory Clock Speed: 1593000000.00 MHz
+  Minimum Memory Clock Speed: 1593000000.00 MHz
+  Standard Deviation: 0.00 MHz
+  Hours Above 5600.0 MHz: 57765.38
+  Hours Above 7000 MHz: 57765.38
+  Hours Above 7700.000000000001 MHz: 57765.38
+
+GPU2:
+  Server Count: 15
+  Average Memory Clock Speed: 1593000000.00 MHz
+  Maximum Memory Clock Speed: 1593000000.00 MHz
+  Minimum Memory Clock Speed: 1593000000.00 MHz
+  Standard Deviation: 0.00 MHz
+  Hours Above 5600.0 MHz: 16738.05
+  Hours Above 7000 MHz: 16738.05
+  Hours Above 7700.000000000001 MHz: 16738.05
+
+GPU3:
+  Server Count: 14
+  Average Memory Clock Speed: 3756190355.84 MHz
+  Maximum Memory Clock Speed: 7250000000.00 MHz
+  Minimum Memory Clock Speed: 405000000.00 MHz
+  Standard Deviation: 3421759047.58 MHz
+  Hours Above 5600.0 MHz: 14145.70
+  Hours Above 7000 MHz: 14145.70
+  Hours Above 7700.000000000001 MHz: 14145.70
+

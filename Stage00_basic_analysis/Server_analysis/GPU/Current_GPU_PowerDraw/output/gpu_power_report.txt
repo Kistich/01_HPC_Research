@@ -1,0 +1,77 @@
+GPU POWER DRAW ANALYSIS REPORT
+=============================
+
+Report Generated: 2025-03-21 11:37:56
+
+EXECUTIVE SUMMARY
+-----------------
+Overall Average GPU Power Draw: 154.64W
+Maximum Observed Power Draw: 585.12W
+Minimum Observed Power Draw: 13.06W
+Standard Deviation: 128.88
+
+10th Percentile: 52.66W
+25th Percentile: 58.19W
+50th Percentile (Median): 80.24W
+75th Percentile: 261.70W
+90th Percentile: 375.73W
+
+SERVER GROUP SUMMARIES
+----------------------
+
+GPU1:
+  Average Power Draw: 170.20W
+  Maximum Power Draw: 585.12W
+  Minimum Power Draw: 47.65W
+  Standard Deviation: 133.83
+  Number of Servers: 50
+  Hours Above 200W: 25359.28
+  Hours Above 250W: 20755.60
+
+GPU2:
+  Average Power Draw: 150.14W
+  Maximum Power Draw: 578.58W
+  Minimum Power Draw: 44.51W
+  Standard Deviation: 122.07
+  Number of Servers: 15
+  Hours Above 200W: 20531.67
+  Hours Above 250W: 16789.00
+
+GPU3:
+  Average Power Draw: 96.46W
+  Maximum Power Draw: 341.78W
+  Minimum Power Draw: 13.06W
+  Standard Deviation: 94.42
+  Number of Servers: 14
+  Hours Above 200W: 12198.36
+  Hours Above 250W: 7938.14
+
+TEMPORAL POWER PATTERNS
+----------------------
+
+Peak Hour of the Day: 17:00 (Average: 157.55W)
+Lowest Hour of the Day: 1:00 (Average: 151.14W)
+
+Peak Day of the Week: Tuesday (Average: 157.25W)
+Lowest Day of the Week: Sunday (Average: 153.04W)
+
+POWER EFFICIENCY ANALYSIS
+-------------------------
+
+Time in Low Power State (<100W): 57.62%
+Time in Medium Power State (100-199W): 9.54%
+Time in High Power State (200-249W): 6.50%
+Time in Very High Power State (≥250W): 26.34%
+
+RECOMMENDATIONS
+--------------
+
+1. Overall GPU power draw is moderate. Continue monitoring, but current levels appear to be within expected operational range.
+2. Significant power imbalance between server groups. GPU1 is drawing substantially more power than GPU3, which may lead to cooling and performance variations.
+5. Large variations in power draw detected. This may indicate unstable workloads or power management issues. Consider implementing more consistent workload scheduling.
+
+NOTES:
+- This report analyzes the power draw of GPUs across the server groups.
+- Power efficiency can be improved by utilizing GPU processing capacity more consistently rather than in bursts.
+- Consider comparing power draw with actual computational output to assess true efficiency.
+- Modern GPUs generally operate most efficiently at moderate to high utilization levels with consistent workloads.

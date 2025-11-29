@@ -1,0 +1,33 @@
+Video Clock Speed Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Video Clock Speed: 1009265304.04 MHz
+  Maximum Video Clock Speed: 1275000000.00 MHz
+  Minimum Video Clock Speed: 585000000.00 MHz
+  Standard Deviation: 305699780.34 MHz
+  Hours Above 960.0 MHz: 57763.35
+  Hours Above 1200 MHz: 57763.35
+  Hours Above 1320.0 MHz: 57763.35
+
+GPU2:
+  Server Count: 15
+  Average Video Clock Speed: 958520710.74 MHz
+  Maximum Video Clock Speed: 1275000000.00 MHz
+  Minimum Video Clock Speed: 585000000.00 MHz
+  Standard Deviation: 322291976.99 MHz
+  Hours Above 960.0 MHz: 16741.32
+  Hours Above 1200 MHz: 16741.32
+  Hours Above 1320.0 MHz: 16741.32
+
+GPU3:
+  Server Count: 14
+  Average Video Clock Speed: 1011084677.78 MHz
+  Maximum Video Clock Speed: 1530000000.00 MHz
+  Minimum Video Clock Speed: 555000000.00 MHz
+  Standard Deviation: 470231798.66 MHz
+  Hours Above 960.0 MHz: 14147.75
+  Hours Above 1200 MHz: 14147.75
+  Hours Above 1320.0 MHz: 14147.75
+

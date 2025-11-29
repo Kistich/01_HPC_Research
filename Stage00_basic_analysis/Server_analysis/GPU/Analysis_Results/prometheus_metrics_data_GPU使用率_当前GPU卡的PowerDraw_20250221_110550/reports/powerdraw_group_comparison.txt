@@ -1,0 +1,33 @@
+Power Draw Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Power Draw: 170.20 W
+  Maximum Power Draw: 585.12 W
+  Minimum Power Draw: 47.65 W
+  Standard Deviation: 133.83 W
+  Hours Above 175.0 W: 22083.53
+  Hours Above 250 W: 17296.33
+  Hours Above 300.0 W: 14513.85
+
+GPU2:
+  Server Count: 15
+  Average Power Draw: 150.14 W
+  Maximum Power Draw: 578.58 W
+  Minimum Power Draw: 44.51 W
+  Standard Deviation: 122.07 W
+  Hours Above 175.0 W: 5532.37
+  Hours Above 250 W: 4197.25
+  Hours Above 300.0 W: 3096.58
+
+GPU3:
+  Server Count: 14
+  Average Power Draw: 96.46 W
+  Maximum Power Draw: 341.78 W
+  Minimum Power Draw: 13.06 W
+  Standard Deviation: 94.42 W
+  Hours Above 175.0 W: 3256.68
+  Hours Above 250 W: 1852.23
+  Hours Above 300.0 W: 191.82
+

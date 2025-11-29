@@ -1,0 +1,65 @@
+HPC集群工作负载完整分析报告
+================================================================================
+生成时间: 2025-11-29 20:42:57
+分析方法: Helios标准 + 扩展分析
+
+数据统计:
+--------------------------------------------------------------------------------
+总作业数: 6,519,910
+GPU作业数: 101,564 (1.6%)
+CPU作业数: 6,418,346 (98.4%)
+总用户数: 1,660
+
+分析模块执行状态:
+--------------------------------------------------------------------------------
+
+【核心分析模块】
+  ✓ philly_comparison: 分析完成
+  ✓ cluster_characterization: 分析完成
+  ✓ job_characterization: 分析完成
+  ✓ user_characterization: 分析完成
+
+【扩展分析模块】
+  ✓ peak_day_analysis: 分析完成
+  ✓ data_verification: 分析完成
+  ✓ detailed_user_analysis: 分析完成
+  ✓ null_user_analysis: 分析完成
+
+生成的输出文件:
+--------------------------------------------------------------------------------
+
+【核心分析输出】
+  • Philly比较:
+    - job_type_distribution.png
+    - gpu_job_count_status.png
+    - gpu_duration_cdf.png
+    - gpu_time_status.png
+  • 集群特征:
+    - cluster_characterization_helios.png
+  • 作业特征:
+    - job_characterization_cpu_helios.png
+    - job_characterization_gpu_helios.png
+    - job_status_distribution_helios.png
+  • 用户特征:
+    - user_resource_cdf_helios.png
+    - user_behavior_patterns_helios.png
+    - user_cpu_behavior_helios.png
+    - user_gpu_behavior_helios.png
+
+【扩展分析输出】
+  • 峰值日分析:
+    - output/peak_day_analysis_report.md
+    - output/peak_day_detailed/peak_day_summary_report.md
+    - output/peak_day_detailed/*.png
+  • 数据验证:
+    - output/data_verification/*.csv
+  • 详细用户分析:
+    - output/detailed_user_analysis/*.csv
+    - output/detailed_user_analysis/*.md
+  • 空用户分析:
+    - output/null_user_analysis/*.json
+    - output/null_user_analysis/*.csv
+
+================================================================================
+分析完成！所有结果已保存到 output/ 目录
+================================================================================

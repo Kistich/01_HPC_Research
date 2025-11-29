@@ -1,0 +1,33 @@
+Memory Utilization Comparison Across Server Groups
+==================================================
+
+GPU1:
+  Server Count: 50
+  Average Memory Utilization: 0.14 %
+  Maximum Memory Utilization: 1.00 %
+  Minimum Memory Utilization: 0.00 %
+  Standard Deviation: 0.20 %
+  Hours Above 50 %: 0.00
+  Hours Above 80 %: 0.00
+  Hours Above 90 %: 0.00
+
+GPU2:
+  Server Count: 15
+  Average Memory Utilization: 0.12 %
+  Maximum Memory Utilization: 1.00 %
+  Minimum Memory Utilization: 0.00 %
+  Standard Deviation: 0.19 %
+  Hours Above 50 %: 0.00
+  Hours Above 80 %: 0.00
+  Hours Above 90 %: 0.00
+
+GPU3:
+  Server Count: 14
+  Average Memory Utilization: 0.17 %
+  Maximum Memory Utilization: 1.00 %
+  Minimum Memory Utilization: 0.00 %
+  Standard Deviation: 0.30 %
+  Hours Above 50 %: 0.00
+  Hours Above 80 %: 0.00
+  Hours Above 90 %: 0.00
+

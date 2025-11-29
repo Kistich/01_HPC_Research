@@ -1,0 +1,27 @@
+=== 列名称和数据类型 ===
+cluster_name: category
+job_id: int32
+user_id: float32
+num_processors: int32
+submit_time: category
+start_time: category
+end_time: category
+queue: category
+res_req: category
+from_host: category
+job_name: category
+command: category
+application: category
+jstatus: int32
+exit_status: int32
+job_status_str: category
+num_exec_hosts: int32
+u_time: float32
+s_time: float32
+max_mem: int32
+max_swap: float32
+exec_hosts: category
+first_exec_host: category
+gpu_num: int32
+gpu_mem: float32
+gpu_types: category

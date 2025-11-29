@@ -1,0 +1,63 @@
+Total CPU Usage Analysis Summary
+==================================================
+
+Overall Statistics:
+  - Average Total CPU Usage across all servers: 14.83%
+  - Total servers analyzed: 245
+
+CPU1 Group:
+  - Number of servers: 110
+  - Average Total CPU Usage: 32.44%
+  - Median Total CPU Usage: 0.26%
+  - Standard Deviation: 43.12%
+  - Minimum Total CPU Usage: -3.83%
+  - Maximum Total CPU Usage: 100.00%
+
+CPU2 Group:
+  - Number of servers: 30
+  - Average Total CPU Usage: 5.31%
+  - Median Total CPU Usage: 1.91%
+  - Standard Deviation: 12.79%
+  - Minimum Total CPU Usage: 0.04%
+  - Maximum Total CPU Usage: 100.00%
+
+CPU3 Group:
+  - Number of servers: 20
+  - Average Total CPU Usage: 7.18%
+  - Median Total CPU Usage: 0.10%
+  - Standard Deviation: 22.86%
+  - Minimum Total CPU Usage: -0.69%
+  - Maximum Total CPU Usage: 100.00%
+
+GPU1 Group:
+  - Number of servers: 50
+  - Average Total CPU Usage: 14.40%
+  - Median Total CPU Usage: 11.55%
+  - Standard Deviation: 16.12%
+  - Minimum Total CPU Usage: -0.21%
+  - Maximum Total CPU Usage: 100.00%
+
+GPU2 Group:
+  - Number of servers: 15
+  - Average Total CPU Usage: 15.58%
+  - Median Total CPU Usage: 12.07%
+  - Standard Deviation: 15.28%
+  - Minimum Total CPU Usage: 0.16%
+  - Maximum Total CPU Usage: 99.86%
+
+GPU3 Group:
+  - Number of servers: 14
+  - Average Total CPU Usage: 15.51%
+  - Median Total CPU Usage: 9.88%
+  - Standard Deviation: 17.72%
+  - Minimum Total CPU Usage: -0.03%
+  - Maximum Total CPU Usage: 100.00%
+
+BIGMEM Group:
+  - Number of servers: 6
+  - Average Total CPU Usage: 13.38%
+  - Median Total CPU Usage: 0.14%
+  - Standard Deviation: 28.90%
+  - Minimum Total CPU Usage: -0.36%
+  - Maximum Total CPU Usage: 100.00%
+

@@ -1,0 +1,49 @@
+Memory Clock Speed Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes Memory Clock Speed data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average Memory Clock Speed: 1938179255.18 MHz
+2. Maximum Memory Clock Speed: 7250000000.00 MHz
+3. Minimum Memory Clock Speed: 405000000.00 MHz
+
+Top 5 Servers by Average Memory Clock Speed
+--------------------
+1. gpu3-12 (GPU3): 5245715388.95 MHz
+2. gpu3-6 (GPU3): 4713170272.95 MHz
+3. gpu3-11 (GPU3): 4688879930.68 MHz
+4. gpu3-5 (GPU3): 4658042412.48 MHz
+5. gpu3-4 (GPU3): 4651873343.70 MHz
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average Memory Clock Speed: 1593000000.00 MHz
+  Maximum Memory Clock Speed: 1593000000.00 MHz
+  Hours Above 7000 MHz: 57765.38
+
+GPU2 (15 servers):
+  Average Memory Clock Speed: 1593000000.00 MHz
+  Maximum Memory Clock Speed: 1593000000.00 MHz
+  Hours Above 7000 MHz: 16738.05
+
+GPU3 (14 servers):
+  Average Memory Clock Speed: 3756190355.84 MHz
+  Maximum Memory Clock Speed: 7250000000.00 MHz
+  Hours Above 7000 MHz: 14145.70
+
+Recommendations
+--------------------
+1. Clock speeds are within expected ranges.
+2. The following servers have consistently high memory clock speed and may require attention: gpu1-1 (GPU1), gpu1-2 (GPU1), gpu1-3 (GPU1).
+
+Conclusion
+--------------------
+This analysis provides insights into Memory Clock Speed patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing memory clock speed distribution by day and hour.

@@ -336,17 +336,51 @@ class DetailedPeakDayAnalyzer:
         
         # 保存到文件
         import json
+        import numpy as np
+
+        def convert_to_serializable(obj):
+            """递归转换对象为JSON可序列化格式"""
+            if isinstance(obj, (np.integer, np.int64, np.int32)):
+                return int(obj)
+            elif isinstance(obj, (np.floating, np.float64, np.float32)):
+                return float(obj)
+            elif isinstance(obj, np.ndarray):
+                return obj.tolist()
+            elif isinstance(obj, dict):
+                # 转换字典，确保键是字符串
+                new_dict = {}
+                for key, value in obj.items():
+                    # 如果键是tuple或其他复杂类型，转换为字符串
+                    if isinstance(key, (tuple, list)):
+                        new_key = str(key)
+                    elif isinstance(key, (np.integer, np.int64, np.int32)):
+                        new_key = str(int(key))
+                    elif isinstance(key, (np.floating, np.float64, np.float32)):
+                        new_key = str(float(key))
+                    else:
+                        new_key = str(key)
+                    new_dict[new_key] = convert_to_serializable(value)
+                return new_dict
+            elif isinstance(obj, list):
+                return [convert_to_serializable(item) for item in obj]
+            elif isinstance(obj, tuple):
+                return [convert_to_serializable(item) for item in obj]  # 转换为list
+            elif hasattr(obj, 'to_dict'):
+                return convert_to_serializable(obj.to_dict())
+            elif hasattr(obj, '__dict__'):
+                return str(obj)
+            else:
+                return obj
+
         with open(self.output_dir / 'complete_analysis_results.json', 'w', encoding='utf-8') as f:
             # 转换不可序列化的对象
             serializable_results = {}
             for key, value in results.items():
                 if key == 'user_behavior':
                     continue  # 已经保存为CSV
-                elif isinstance(value, dict):
-                    serializable_results[key] = {k: str(v) if hasattr(v, 'to_dict') else v for k, v in value.items()}
                 else:
-                    serializable_results[key] = str(value)
-            
+                    serializable_results[key] = convert_to_serializable(value)
+
             json.dump(serializable_results, f, ensure_ascii=False, indent=2)
         
         logger.info(f"完整分析完成，结果保存在: {self.output_dir}")

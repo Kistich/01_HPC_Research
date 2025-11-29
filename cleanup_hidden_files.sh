@@ -53,8 +53,8 @@ if [ "$TOTAL_COUNT" -eq 0 ]; then
 fi
 
 # 显示前10个文件示例
-echo -e "${YELLOW}文件示例（前10个）：${NC}"
-echo "$DOTUNDERSCORE_FILES" | head -10
+echo -e "${YELLOW}文件示例（前100个）：${NC}"
+echo "$DOTUNDERSCORE_FILES" | head -100
 if [ "$DSSTORE_COUNT" -gt 0 ]; then
     echo "$DSSTORE_FILES" | head -3
 fi

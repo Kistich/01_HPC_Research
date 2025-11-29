@@ -1,0 +1,76 @@
+GPU UTILIZATION ANALYSIS REPORT
+===============================
+
+Report Generated: 2025-03-21 11:54:14
+
+EXECUTIVE SUMMARY
+-----------------
+Overall Average GPU Utilization: 0.41%
+Maximum Observed Utilization: 1.00%
+Minimum Observed Utilization: 0.00%
+Standard Deviation: 0.45
+
+10th Percentile: 0.00%
+25th Percentile: 0.00%
+50th Percentile (Median): 0.04%
+75th Percentile: 0.99%
+90th Percentile: 1.00%
+
+SERVER GROUP SUMMARIES
+----------------------
+
+GPU1:
+  Average Utilization: 0.45%
+  Maximum Utilization: 1.00%
+  Minimum Utilization: 0.00%
+  Standard Deviation: 0.46
+  Number of Servers: 50
+  Hours Above 50% Utilization: 0.00
+  Hours Above 80% Utilization: 0.00
+
+GPU2:
+  Average Utilization: 0.40%
+  Maximum Utilization: 1.00%
+  Minimum Utilization: 0.00%
+  Standard Deviation: 0.45
+  Number of Servers: 15
+  Hours Above 50% Utilization: 0.00
+  Hours Above 80% Utilization: 0.00
+
+GPU3:
+  Average Utilization: 0.27%
+  Maximum Utilization: 1.00%
+  Minimum Utilization: 0.00%
+  Standard Deviation: 0.41
+  Number of Servers: 14
+  Hours Above 50% Utilization: 0.00
+  Hours Above 80% Utilization: 0.00
+
+TEMPORAL UTILIZATION PATTERNS
+----------------------------
+
+Peak Hour of the Day: 18:00 (Average: 0.42%)
+Lowest Hour of the Day: 1:00 (Average: 0.40%)
+
+Peak Day of the Week: Tuesday (Average: 0.42%)
+Lowest Day of the Week: Sunday (Average: 0.40%)
+
+UTILIZATION EFFICIENCY ANALYSIS
+-------------------------------
+
+Time in Low Utilization State (<20%): 100.00%
+Time in Medium Utilization State (20-49%): 0.00%
+Time in High Utilization State (50-79%): 0.00%
+Time in Very High Utilization State (≥80%): 0.00%
+
+RECOMMENDATIONS
+--------------
+
+1. Overall GPU utilization is low, suggesting GPUs are often idle. Consider consolidating workloads onto fewer GPUs or implementing an auto-scaling solution to optimize resource usage.
+4. The following groups show consistently low utilization and may benefit from workload consolidation: GPU1, GPU2, GPU3.
+
+NOTES:
+- This report analyzes the utilization of GPUs across the server groups.
+- Optimal GPU utilization typically falls between 50-80%. Too low suggests wasted resources, while too high can lead to performance bottlenecks.
+- Consider comparing utilization with actual job completion times to assess true efficiency.
+- For better resource allocation, consider implementing dynamic scheduling of GPU workloads based on the patterns identified in this report.

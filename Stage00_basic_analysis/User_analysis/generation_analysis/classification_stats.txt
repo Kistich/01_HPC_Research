@@ -1,0 +1,74 @@
+=== 集群分类统计 ===
+
+总分析作业数: 8,881,489
+一期集群作业: 4,002 (0.05%)
+二期集群作业: 8,877,313 (99.95%)
+异常记录数: 2,341 (0.03%)
+
+
+=== 按集群名称和代次的详细统计 ===
+
+集群: HKUSTHPC-AI, 代次: 1, 作业数: 2,156 (0.02%)
+集群: ASCEND-AI, 代次: 1, 作业数: 467 (0.01%)
+集群: jhcluster, 代次: 1, 作业数: 168 (0.00%)
+集群: hkuhpc-ai, 代次: 1, 作业数: 1 (0.00%)
+集群: hkuhpc-ai, 代次: 2, 作业数: 5,989,356 (67.44%)
+集群: HKUSTHPC-AI, 代次: 2, 作业数: 2,883,094 (32.46%)
+集群: ASCEND-AI, 代次: 2, 作业数: 10 (0.00%)
+集群: HKUSTHPC-AI, 代次: 混合特征, 作业数: 129 (0.00%)
+集群: ASCEND-AI, 代次: 混合特征, 作业数: 41 (0.00%)
+集群: hkuhpc-ai, 代次: 混合特征, 作业数: 4 (0.00%)
+
+=== 集群代次映射关系 ===
+
+hkuhpc-ai: 第2期
+HKUSTHPC-AI: 第2期
+ASCEND-AI: 第1期
+jhcluster: 第1期
+
+=== 代次判断依据 ===
+
+一期集群特征(UniScheduler):
+- #BSUB\b
+- \bjsub\b
+- \bbsub\b
+- -q\s+\w+
+- \$MPI_HOSTFILE\b
+- \$OMPI_HOSTFILE\b
+- \$JH_HOSTFILE\b
+- profile\.unischeduler\b
+- /opt/jhinno
+- (cpu|gpu)[0-9]{2}(?!-)
+- \b(gnode-|cnode-)[0-9]+\b
+
+二期集群特征(SLURM):
+- #SBATCH\b
+- \bsbatch\b
+- \bsrun\b
+- -p\s+\w+
+- --partition=\w+
+- --gres=gpu
+- --ntasks-per-node
+- \$SLURM_STEP_NUM_TASKS\b
+- \$SLURM_NTASKS\b
+- \$SLURM_JOB_NODELIST\b
+- \b(i64m512[ur]|a128m512u|i96m3tu|i64m1tg)\b
+- (cpu|gpu|train)[0-9]+-[0-9]+
+- ascend
+- npu
+- mindspore
+- atlas
+
+特定集群强制规则:
+- jhcluster: 归属于第1期集群
+  模式: #BSUB, jsub, bsub, /opt/jhinno, unischeduler, \$JH_HOSTFILE
+- ASCEND-AI: 归属于第2期集群
+  模式: ascend, npu, mindspore, huawei, atlas
+
+判断逻辑:
+1. 首先检查特定集群的强制规则
+2. 检查每一行数据是否包含一期或二期特征
+3. 统计匹配到的一期和二期特征数量
+4. 根据匹配特征数量的多少决定代次
+5. 对于特征匹配数相等的情况，标记为'混合特征'
+6. 与集群主要代次不符的记录被标记为异常并单独收集

@@ -1,0 +1,49 @@
+Video Clock Speed Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes Video Clock Speed data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average Video Clock Speed: 999972931.74 MHz
+2. Maximum Video Clock Speed: 1530000000.00 MHz
+3. Minimum Video Clock Speed: 555000000.00 MHz
+
+Top 5 Servers by Average Video Clock Speed
+--------------------
+1. gpu3-12 (GPU3): 1210085721.30 MHz
+2. gpu3-11 (GPU3): 1144797381.68 MHz
+3. gpu3-6 (GPU3): 1144342309.68 MHz
+4. gpu3-4 (GPU3): 1133128518.16 MHz
+5. gpu3-5 (GPU3): 1128740615.02 MHz
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average Video Clock Speed: 1009265304.04 MHz
+  Maximum Video Clock Speed: 1275000000.00 MHz
+  Hours Above 1200 MHz: 57763.35
+
+GPU2 (15 servers):
+  Average Video Clock Speed: 958520710.74 MHz
+  Maximum Video Clock Speed: 1275000000.00 MHz
+  Hours Above 1200 MHz: 16741.32
+
+GPU3 (14 servers):
+  Average Video Clock Speed: 1011084677.78 MHz
+  Maximum Video Clock Speed: 1530000000.00 MHz
+  Hours Above 1200 MHz: 14147.75
+
+Recommendations
+--------------------
+1. Clock speeds are within expected ranges.
+2. The following servers have consistently high video clock speed and may require attention: gpu1-1 (GPU1), gpu1-2 (GPU1), gpu1-3 (GPU1).
+
+Conclusion
+--------------------
+This analysis provides insights into Video Clock Speed patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing video clock speed distribution by day and hour.

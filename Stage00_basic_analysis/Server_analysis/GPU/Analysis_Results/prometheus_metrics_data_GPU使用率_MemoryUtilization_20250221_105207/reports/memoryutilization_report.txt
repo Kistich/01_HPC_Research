@@ -1,0 +1,48 @@
+Memory Utilization Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes Memory Utilization data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average Memory Utilization: 0.14 %
+2. Maximum Memory Utilization: 1.00 %
+3. Minimum Memory Utilization: 0.00 %
+
+Top 5 Servers by Average Memory Utilization
+--------------------
+1. gpu1-19 (GPU1): 0.26 %
+2. gpu3-12 (GPU3): 0.26 %
+3. gpu1-30 (GPU1): 0.26 %
+4. gpu1-23 (GPU1): 0.25 %
+5. gpu3-10 (GPU3): 0.25 %
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average Memory Utilization: 0.14 %
+  Maximum Memory Utilization: 1.00 %
+  Hours Above 80 %: 0.00
+
+GPU2 (15 servers):
+  Average Memory Utilization: 0.12 %
+  Maximum Memory Utilization: 1.00 %
+  Hours Above 80 %: 0.00
+
+GPU3 (14 servers):
+  Average Memory Utilization: 0.17 %
+  Maximum Memory Utilization: 1.00 %
+  Hours Above 80 %: 0.00
+
+Recommendations
+--------------------
+1. Overall utilization is relatively low. Consider consolidating workloads to fewer GPUs.
+
+Conclusion
+--------------------
+This analysis provides insights into Memory Utilization patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing memory utilization distribution by day and hour.

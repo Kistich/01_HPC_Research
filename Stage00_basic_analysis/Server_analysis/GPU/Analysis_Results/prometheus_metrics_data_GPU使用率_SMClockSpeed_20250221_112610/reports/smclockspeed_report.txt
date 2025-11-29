@@ -1,0 +1,49 @@
+SM Clock Speed Analysis Report
+==================================================
+
+Executive Summary
+--------------------
+This report analyzes SM Clock Speed data from 79 servers across 3 groups.
+
+Key Findings
+--------------------
+1. Average SM Clock Speed: 935344049.05 MHz
+2. Maximum SM Clock Speed: 1740000000.00 MHz
+3. Minimum SM Clock Speed: 0.00 MHz
+
+Top 5 Servers by Average SM Clock Speed
+--------------------
+1. gpu3-12 (GPU3): 1195667498.31 MHz
+2. gpu1-25 (GPU1): 1135775739.87 MHz
+3. gpu1-6 (GPU1): 1132247826.59 MHz
+4. gpu1-30 (GPU1): 1123348714.29 MHz
+5. gpu1-35 (GPU1): 1106158967.51 MHz
+
+Analysis by Server Group
+--------------------
+
+GPU1 (50 servers):
+  Average SM Clock Speed: 973491311.09 MHz
+  Maximum SM Clock Speed: 1410000000.00 MHz
+  Hours Above 1500 MHz: 57760.42
+
+GPU2 (15 servers):
+  Average SM Clock Speed: 878452484.63 MHz
+  Maximum SM Clock Speed: 1410000000.00 MHz
+  Hours Above 1500 MHz: 16745.28
+
+GPU3 (14 servers):
+  Average SM Clock Speed: 846943830.59 MHz
+  Maximum SM Clock Speed: 1740000000.00 MHz
+  Hours Above 1500 MHz: 8670.90
+
+Recommendations
+--------------------
+1. Clock speeds are within expected ranges.
+2. The following servers have consistently high sm clock speed and may require attention: gpu1-1 (GPU1), gpu1-2 (GPU1), gpu1-3 (GPU1).
+
+Conclusion
+--------------------
+This analysis provides insights into SM Clock Speed patterns across different server groups.
+For detailed visualizations, refer to the figures directory which contains monthly, weekly, and daily pattern analysis,
+as well as heatmaps showing sm clock speed distribution by day and hour.

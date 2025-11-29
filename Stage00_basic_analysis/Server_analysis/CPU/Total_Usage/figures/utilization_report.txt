@@ -1,0 +1,74 @@
+Total CPU Usage Utilization Report
+==================================================
+
+Summary:
+This report analyzes total CPU usage across different server groups and provides
+insights into utilization patterns and potential optimization opportunities.
+
+Overall Utilization:
+  - Total servers: 245
+  - High utilization servers (>70% avg): 0 (0.0%)
+  - Low utilization servers (<20% avg): 131 (53.5%)
+  - Balanced utilization servers: 114 (46.5%)
+
+Group-specific Utilization:
+
+CPU1 Group:
+  - Total servers: 110
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 7 (6.4%)
+  - Balanced utilization servers: 103 (93.6%)
+
+CPU2 Group:
+  - Total servers: 30
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 30 (100.0%)
+  - Balanced utilization servers: 0 (0.0%)
+
+CPU3 Group:
+  - Total servers: 20
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 20 (100.0%)
+  - Balanced utilization servers: 0 (0.0%)
+
+GPU1 Group:
+  - Total servers: 50
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 45 (90.0%)
+  - Balanced utilization servers: 5 (10.0%)
+
+GPU2 Group:
+  - Total servers: 15
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 14 (93.3%)
+  - Balanced utilization servers: 1 (6.7%)
+
+GPU3 Group:
+  - Total servers: 14
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 10 (71.4%)
+  - Balanced utilization servers: 4 (28.6%)
+
+BIGMEM Group:
+  - Total servers: 6
+  - High utilization servers: 0 (0.0%)
+  - Low utilization servers: 5 (83.3%)
+  - Balanced utilization servers: 1 (16.7%)
+
+Recommendations:
+
+2. Low Utilization Opportunities:
+   - Consider consolidation or repurposing for low utilization servers
+   - These groups have significant underutilization: CPU2, CPU3, GPU1, GPU2, GPU3, BIGMEM
+
+3. Future Capacity Planning:
+   - Monitor growth trends in CPU usage for capacity planning
+   - Implement automated scaling for workloads with predictable patterns
+   - Consider containerization for better resource utilization
+
+4. Energy Efficiency:
+   - Evaluate power management settings for low utilization servers
+   - Consider scheduling batch jobs during off-peak hours
+
+==================================================
+Report generated on: 2025-11-29 22:01:34

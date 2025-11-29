@@ -1,0 +1,61 @@
+GPU 8 CARDS AVERAGE UTILIZATION REPORT
+=====================================
+
+Report Generated: 2025-03-21 10:50:17
+
+EXECUTIVE SUMMARY
+-----------------
+Overall Average GPU Utilization: 0.39%
+Maximum Observed Utilization: 1.00%
+Minimum Observed Utilization: 0.00%
+Standard Deviation: 0.37
+
+SERVER GROUP SUMMARIES
+----------------------
+
+GPU1:
+  Average Utilization: 0.44%
+  Maximum Utilization: 1.00%
+  Minimum Utilization: 0.00%
+  Standard Deviation: 0.38
+  Number of Servers: 50
+  Hours Above 80% Utilization: 0.00
+  Hours Above 90% Utilization: 0.00
+
+GPU2:
+  Average Utilization: 0.36%
+  Maximum Utilization: 1.00%
+  Minimum Utilization: 0.00%
+  Standard Deviation: 0.34
+  Number of Servers: 15
+  Hours Above 80% Utilization: 0.00
+  Hours Above 90% Utilization: 0.00
+
+GPU3:
+  Average Utilization: 0.23%
+  Maximum Utilization: 1.00%
+  Minimum Utilization: 0.00%
+  Standard Deviation: 0.30
+  Number of Servers: 14
+  Hours Above 80% Utilization: 0.00
+  Hours Above 90% Utilization: 0.00
+
+TEMPORAL USAGE PATTERNS
+----------------------
+
+Peak Hour of the Day: 18:00 (Average: 0.40%)
+Lowest Hour of the Day: 0:00 (Average: 0.38%)
+
+Peak Day of the Week: Tuesday (Average: 0.40%)
+Lowest Day of the Week: Sunday (Average: 0.38%)
+
+RECOMMENDATIONS
+--------------
+
+1. Overall GPU utilization is low. Consider consolidating workloads or reducing active GPU servers.
+5. The following groups show low utilization and may be candidates for workload consolidation: GPU1, GPU2, GPU3.
+
+NOTES:
+- This report analyzes the average utilization across 8 GPU cards per server.
+- Individual GPU card usage may vary and could be analyzed separately for more detailed insights.
+- Consider monitoring memory usage alongside GPU utilization for a more complete picture.

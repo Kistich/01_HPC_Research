@@ -1,0 +1,102 @@
+===== DISK I/O ANALYSIS SUMMARY =====
+
+Analysis date: 2025-03-19 10:43:16
+Excel file: /mnt/raid/liuhongbin/job_analysis/job_analysis/raw_data/prometheus_metrics_data_CPU使用率_磁盘IO使用率（%）_20250221_113627.xlsx
+
+RANKING BY AVERAGE I/O:
+1. BIGMEM: 0.02 MB/s
+2. Training: 0.01 MB/s
+3. CPU3: 0.01 MB/s
+4. GPU2: 0.01 MB/s
+5. GPU1: 0.00 MB/s
+6. CPU1: 0.00 MB/s
+7. GPU3: 0.00 MB/s
+8. Inference: 0.00 MB/s
+9. CPU2: 0.00 MB/s
+
+RANKING BY MAXIMUM I/O:
+1. GPU2: 90.08 MB/s
+2. BIGMEM: 80.94 MB/s
+3. CPU1: 74.81 MB/s
+4. GPU1: 69.10 MB/s
+5. CPU3: 29.18 MB/s
+6. CPU2: 27.10 MB/s
+7. GPU3: 22.12 MB/s
+8. Training: 9.62 MB/s
+9. Inference: 0.90 MB/s
+
+DETAILED STATISTICS BY GROUP:
+
+CPU1 Group:
+  - Number of servers: 110
+  - Average I/O across all servers: 0.00 MB/s
+  - Highest average I/O: 0.02 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 14.11 MB/s
+  - Highest maximum I/O: 74.81 MB/s
+
+CPU2 Group:
+  - Number of servers: 30
+  - Average I/O across all servers: 0.00 MB/s
+  - Highest average I/O: 0.01 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 3.15 MB/s
+  - Highest maximum I/O: 27.10 MB/s
+
+CPU3 Group:
+  - Number of servers: 20
+  - Average I/O across all servers: 0.01 MB/s
+  - Highest average I/O: 0.06 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 6.13 MB/s
+  - Highest maximum I/O: 29.18 MB/s
+
+GPU1 Group:
+  - Number of servers: 50
+  - Average I/O across all servers: 0.00 MB/s
+  - Highest average I/O: 0.02 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 16.06 MB/s
+  - Highest maximum I/O: 69.10 MB/s
+
+GPU2 Group:
+  - Number of servers: 15
+  - Average I/O across all servers: 0.01 MB/s
+  - Highest average I/O: 0.03 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 17.62 MB/s
+  - Highest maximum I/O: 90.08 MB/s
+
+GPU3 Group:
+  - Number of servers: 14
+  - Average I/O across all servers: 0.00 MB/s
+  - Highest average I/O: 0.01 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 3.92 MB/s
+  - Highest maximum I/O: 22.12 MB/s
+
+BIGMEM Group:
+  - Number of servers: 6
+  - Average I/O across all servers: 0.02 MB/s
+  - Highest average I/O: 0.06 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 24.85 MB/s
+  - Highest maximum I/O: 80.94 MB/s
+
+Inference Group:
+  - Number of servers: 2
+  - Average I/O across all servers: 0.00 MB/s
+  - Highest average I/O: 0.00 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 0.84 MB/s
+  - Highest maximum I/O: 0.90 MB/s
+
+Training Group:
+  - Number of servers: 8
+  - Average I/O across all servers: 0.01 MB/s
+  - Highest average I/O: 0.04 MB/s
+  - Lowest average I/O: 0.00 MB/s
+  - Average maximum I/O: 2.58 MB/s
+  - Highest maximum I/O: 9.62 MB/s
+
+Report generated: 2025-03-19 10:43:16
