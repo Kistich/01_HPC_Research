@@ -1,0 +1,174 @@
+# 缺失数据分析配置
+missing_analysis:
+  # 字段重要性配置
+  field_importance:
+    # 核心字段 - 必须完整
+    core_fields:
+      - field: "job_id"
+        weight: 5.0
+        description: "作业唯一标识"
+      - field: "submit_time"
+        weight: 5.0
+        description: "提交时间"
+      - field: "start_time"
+        weight: 5.0
+        description: "开始时间"
+      - field: "end_time"
+        weight: 5.0
+        description: "结束时间"
+      - field: "user_id"
+        weight: 4.5
+        description: "用户标识"
+    
+    # 重要字段 - 影响分析质量
+    important_fields:
+      - field: "exec_hosts"
+        weight: 4.0
+        description: "执行主机"
+      - field: "exit_status"
+        weight: 4.0
+        description: "退出状态"
+      - field: "duration"
+        weight: 3.5
+        description: "运行时长"
+      - field: "queue_time"
+        weight: 3.5
+        description: "排队时间"
+      - field: "job_name"
+        weight: 3.0
+        description: "作业名称"
+      - field: "cluster_name"
+        weight: 3.0
+        description: "集群名称"
+    
+    # 辅助字段 - 可以容忍缺失
+    auxiliary_fields:
+      - field: "working_directory"
+        weight: 2.5
+        description: "工作目录"
+      - field: "command"
+        weight: 2.5
+        description: "执行命令"
+      - field: "cpu_num"
+        weight: 2.0
+        description: "CPU数量"
+      - field: "mem_req"
+        weight: 2.0
+        description: "内存请求"
+      - field: "gpu_num"
+        weight: 2.0
+        description: "GPU数量"
+    
+    # 冗余字段 - 缺失无影响
+    redundant_fields:
+      - field: "first_exec_host"
+        weight: 1.0
+        description: "首个执行主机"
+      - field: "queue"
+        weight: 1.0
+        description: "队列名称"
+      - field: "project"
+        weight: 1.0
+        description: "项目名称"
+  
+  # 缺失模式分析配置
+  missing_pattern_analysis:
+    # 时间维度分析
+    temporal_analysis:
+      time_granularities:
+        - "hour"                     # 小时级别
+        - "day"                      # 天级别
+        - "week"                     # 周级别
+        - "month"                    # 月级别
+      
+      trend_analysis: true           # 趋势分析
+      seasonality_analysis: true     # 季节性分析
+      anomaly_detection: true        # 异常检测
+    
+    # 用户维度分析
+    user_analysis:
+      user_grouping: true            # 用户分组
+      missing_correlation: true      # 缺失相关性
+      user_behavior_impact: true     # 用户行为影响
+    
+    # 集群维度分析
+    cluster_analysis:
+      cluster_comparison: true       # 集群对比
+      node_type_analysis: true       # 节点类型分析
+      system_impact_analysis: true   # 系统影响分析
+    
+    # 字段相关性分析
+    field_correlation:
+      correlation_threshold: 0.3     # 相关性阈值
+      missing_dependency: true       # 缺失依赖性
+      cascade_missing: true          # 级联缺失
+  
+  # 数据质量评分配置
+  quality_scoring:
+    # 记录级评分
+    record_level:
+      scoring_method: "weighted_sum" # 评分方法
+      normalization: "min_max"       # 归一化方法
+      
+      # 质量等级
+      quality_grades:
+        A: 
+          threshold: 0.95
+          description: "优秀 - 几乎完整"
+        B:
+          threshold: 0.80
+          description: "良好 - 主要字段完整"
+        C:
+          threshold: 0.60
+          description: "一般 - 部分重要字段缺失"
+        D:
+          threshold: 0.40
+          description: "较差 - 多个重要字段缺失"
+        F:
+          threshold: 0.00
+          description: "很差 - 核心字段缺失"
+    
+    # 数据集级评分
+    dataset_level:
+      completeness_score: true       # 完整性评分
+      consistency_score: true        # 一致性评分
+      validity_score: true           # 有效性评分
+      timeliness_score: false        # 时效性评分(暂不启用)
+      
+      # 综合评分权重
+      score_weights:
+        completeness: 0.4
+        consistency: 0.3
+        validity: 0.3
+        timeliness: 0.0
+  
+  # 可视化配置
+  visualization:
+    # 图表类型
+    chart_types:
+      - "missing_heatmap"            # 缺失热力图
+      - "missing_timeline"           # 缺失时间线
+      - "field_completeness_bar"     # 字段完整性柱状图
+      - "quality_distribution_pie"   # 质量分布饼图
+      - "correlation_matrix"         # 相关性矩阵
+    
+    # 图表配置
+    chart_config:
+      figure_size: [12, 8]           # 图表大小
+      dpi: 300                       # 分辨率
+      color_scheme: "viridis"        # 颜色方案
+      save_format: ["png", "pdf"]    # 保存格式
+
+# 并行处理配置
+parallel_processing:
+  max_cores: 32
+  analysis_parallel: true           # 分析并行
+  visualization_parallel: false     # 可视化不并行
+  
+# 输出配置
+output:
+  detailed_statistics: true         # 详细统计
+  missing_patterns: true            # 缺失模式
+  quality_scores: true              # 质量评分
+  recommendations: true             # 改进建议
+  interactive_dashboard: true       # 交互式仪表板

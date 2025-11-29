@@ -1,0 +1,90 @@
+# HPC集群配置文件
+# 基于Helios项目的集群分析方法，适配我们的HPC环境
+
+cluster_info:
+  name: "HPC_Cluster"
+  description: "HPC二期硬件资源集群"
+  
+# 子集群配置 (对应Helios的物理集群概念，如Venus/Earth/Saturn/Uranus)
+subclusters:
+  CPU1:
+    node_count: 110
+    node_prefix: "cpu1-"
+    cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    gpu_spec: null
+    memory_spec: "512GB"
+    node_type: "cpu"
+    
+  CPU2:
+    node_count: 30
+    node_prefix: "cpu2-"
+    cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    gpu_spec: null
+    memory_spec: "512GB"
+    node_type: "cpu"
+    
+  CPU3:
+    node_count: 20
+    node_prefix: "cpu3-"
+    cpu_spec: "2 * AMD EPYC 7763 64-Core Processor 2450 64C @ 2.45GHz"
+    gpu_spec: null
+    memory_spec: "512GB"
+    node_type: "cpu"
+    
+  GPU1:
+    node_count: 50
+    node_prefix: "gpu1-"
+    cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    gpu_spec: "8 * NVIDIA A800-SXM4-80GB"
+    memory_spec: "1024GB"
+    node_type: "gpu"
+    
+  GPU2:
+    node_count: 10
+    node_prefix: "gpu2-"
+    cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    gpu_spec: "8 * NVIDIA A800-SXM4-80GB"
+    memory_spec: "2048GB"
+    node_type: "gpu"
+    
+  GPU3:
+    node_count: 15
+    node_prefix: "gpu3-"
+    cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    gpu_spec: "8 * NVIDIA A40-48GB"
+    memory_spec: "1024GB"
+    node_type: "gpu"
+    
+  BIGMEM:
+    node_count: 6
+    node_prefix: "bigmem-"
+    cpu_spec: "4 * Intel(R) Xeon(R) Gold 6348H CPU 24C @ 2.30GHz"
+    gpu_spec: null
+    memory_spec: "大内存"
+    node_type: "bigmem"
+
+# 作业类型识别规则 (基于exec_hosts字段)
+job_classification:
+  gpu_job_patterns:
+    - "gpu1-"
+    - "gpu2-"
+    - "gpu3-"
+  cpu_job_patterns:
+    - "cpu1-"
+    - "cpu2-"
+    - "cpu3-"
+    - "bigmem-"
+  
+# 数据源配置
+data_sources:
+  job_data_path: "/mnt/raid/liuhongbin/backup/job_prediction/2_Generation_analysis/second_generation_jobs.csv"
+  
+# 集群名称标准化 (处理大小写不一致问题)
+cluster_name_mapping:
+  "hkuhpc-ai": "HKUHPC-AI"
+  "HKUSTHPC-AI": "HKUHPC-AI"
+
+# 时间配置
+time_config:
+  timezone: "Asia/Hong_Kong"
+  date_format: "%Y-%m-%d %H:%M:%S"

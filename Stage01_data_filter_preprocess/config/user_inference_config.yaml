@@ -1,0 +1,138 @@
+# 用户ID推断配置
+user_inference:
+  # 作业指纹配置
+  job_fingerprint:
+    # 基础特征
+    basic_features:
+      job_name: 
+        weight: 3.0
+        similarity_method: "jaccard"
+      working_directory:
+        weight: 2.5
+        similarity_method: "path_similarity"
+      command_line:
+        weight: 2.0
+        similarity_method: "sequence_similarity"
+      queue_name:
+        weight: 1.5
+        similarity_method: "exact_match"
+    
+    # 资源配置特征
+    resource_features:
+      cpu_count:
+        weight: 2.0
+        tolerance: 0.1              # 10%容忍度
+      memory_request:
+        weight: 2.0
+        tolerance: 0.2              # 20%容忍度
+      gpu_count:
+        weight: 2.5
+        tolerance: 0.0              # 精确匹配
+      walltime_request:
+        weight: 1.5
+        tolerance: 0.3              # 30%容忍度
+    
+    # 时间模式特征
+    temporal_features:
+      submit_hour_pattern:
+        weight: 1.5
+        bin_size: 2                 # 2小时为一个时间段
+      submit_day_pattern:
+        weight: 1.0
+        weekday_weekend: true       # 区分工作日和周末
+      submission_interval:
+        weight: 1.0
+        tolerance: 0.5              # 50%容忍度
+    
+    # 行为模式特征
+    behavior_features:
+      duration_pattern:
+        weight: 1.5
+        tolerance: 0.4              # 40%容忍度
+      success_rate_pattern:
+        weight: 1.0
+        tolerance: 0.3              # 30%容忍度
+      resource_utilization:
+        weight: 1.0
+        tolerance: 0.4              # 40%容忍度
+  
+  # 聚类配置
+  clustering:
+    # 聚类算法
+    algorithms:
+      primary: "hierarchical"         # 主要算法
+      secondary: "dbscan"            # 辅助算法
+      ensemble: true                 # 使用集成方法
+    
+    # 层次聚类配置
+    hierarchical:
+      linkage_method: "ward"         # 连接方法
+      distance_metric: "euclidean"   # 距离度量
+      max_clusters: 10000            # 最大聚类数
+      min_cluster_size: 2            # 最小聚类大小
+    
+    # DBSCAN配置
+    dbscan:
+      eps: 0.3                       # 邻域半径
+      min_samples: 3                 # 最小样本数
+      metric: "cosine"               # 距离度量
+    
+    # 聚类质量评估
+    quality_assessment:
+      silhouette_threshold: 0.3      # 轮廓系数阈值
+      calinski_harabasz_threshold: 10 # CH指数阈值
+      davies_bouldin_threshold: 2.0  # DB指数阈值
+  
+  # 用户推断配置
+  user_inference_rules:
+    # 置信度分级
+    confidence_levels:
+      high:
+        min_cluster_size: 10         # 最小聚类大小
+        min_silhouette_score: 0.5    # 最小轮廓系数
+        min_feature_consistency: 0.8 # 最小特征一致性
+        id_format: "inferred_high_{:03d}"
+      
+      medium:
+        min_cluster_size: 5
+        min_silhouette_score: 0.3
+        min_feature_consistency: 0.6
+        id_format: "inferred_medium_{:03d}"
+      
+      low:
+        min_cluster_size: 2
+        min_silhouette_score: 0.1
+        min_feature_consistency: 0.4
+        id_format: "inferred_low_{:03d}"
+      
+      singleton:
+        id_format: "singleton_{:03d}"
+    
+    # 特征一致性检查
+    consistency_checks:
+      temporal_consistency: true     # 时间一致性
+      resource_consistency: true     # 资源一致性
+      behavior_consistency: true     # 行为一致性
+      location_consistency: false    # 位置一致性(暂不启用)
+    
+    # 推断验证
+    validation:
+      cross_validation_folds: 5      # 交叉验证折数
+      validation_ratio: 0.2          # 验证集比例
+      min_validation_accuracy: 0.7   # 最小验证准确率
+
+# 并行处理配置
+parallel_processing:
+  max_cores: 32
+  feature_extraction_parallel: true  # 特征提取并行
+  similarity_computation_parallel: true # 相似度计算并行
+  clustering_parallel: true          # 聚类并行
+  chunk_size: 10000                  # 数据块大小
+
+# 输出配置
+output:
+  save_fingerprints: true            # 保存指纹特征
+  save_similarity_matrix: false      # 不保存相似度矩阵(太大)
+  save_clustering_results: true      # 保存聚类结果
+  save_inference_mapping: true       # 保存推断映射
+  generate_validation_report: true   # 生成验证报告

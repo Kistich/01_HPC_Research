@@ -1,0 +1,163 @@
+# 智能采样配置
+intelligent_sampling:
+  # 异常检测配置
+  anomaly_detection:
+    # 统计学异常检测
+    statistical_methods:
+      # 日提交量异常检测
+      daily_submission:
+        methods:
+          - "iqr"                    # 四分位距方法
+          - "zscore"                 # Z分数方法
+          - "modified_zscore"        # 修正Z分数方法
+          - "isolation_forest"       # 孤立森林
+        
+        # 阈值配置
+        thresholds:
+          iqr_multiplier: 3.0        # IQR倍数
+          zscore_threshold: 3.0      # Z分数阈值
+          modified_zscore_threshold: 3.5 # 修正Z分数阈值
+          isolation_contamination: 0.1   # 孤立森林污染率
+        
+        # 自定义阈值 (回滚到宽松设置)
+        custom_thresholds:
+          extreme_anomaly: 1000000   # 极端异常阈值(100万) - 回滚
+          severe_anomaly: 100000     # 严重异常阈值(10万) - 回滚
+          moderate_anomaly: 10000    # 中等异常阈值(1万)
+      
+      # 小时提交量异常检测
+      hourly_submission:
+        enable: true
+        extreme_threshold: 50000     # 极端异常阈值(5万/小时)
+        severe_threshold: 10000      # 严重异常阈值(1万/小时)
+        moderate_threshold: 1000     # 中等异常阈值(1千/小时)
+      
+      # 分钟提交量异常检测
+      minute_submission:
+        enable: true
+        extreme_threshold: 1000      # 极端异常阈值(1千/分钟)
+        severe_threshold: 500        # 严重异常阈值(500/分钟)
+        moderate_threshold: 100      # 中等异常阈值(100/分钟)
+    
+    # 用户行为异常检测
+    user_behavior_anomaly:
+      # 高频用户检测
+      high_frequency_users:
+        job_count_threshold: 100000  # 作业数阈值
+        success_rate_threshold: 0.1  # 成功率阈值
+        avg_duration_threshold: 10   # 平均时长阈值(秒)
+      
+      # 异常提交模式
+      submission_patterns:
+        burst_detection: true        # 突发检测
+        regular_pattern_detection: true # 规律模式检测
+        automation_detection: true   # 自动化检测
+    
+    # 作业特征异常检测
+    job_feature_anomaly:
+      # 重复作业检测
+      duplicate_jobs:
+        similarity_threshold: 0.95   # 相似度阈值
+        time_window_minutes: 60      # 时间窗口(分钟)
+        count_threshold: 100         # 数量阈值
+      
+      # 资源使用异常
+      resource_anomaly:
+        cpu_efficiency_threshold: 0.01 # CPU效率阈值
+        memory_waste_threshold: 0.9     # 内存浪费阈值
+        gpu_idle_threshold: 0.1         # GPU空闲阈值
+  
+  # 分层采样策略
+  sampling_strategies:
+    # 极端异常采样(日提交量>100万)
+    extreme_anomaly:
+      sampling_method: "stratified"  # 分层采样
+      sampling_ratio: 0.01           # 采样比例1%
+      min_samples: 1000              # 最小样本数
+      max_samples: 50000             # 最大样本数
+      
+      # 分层策略
+      stratification:
+        by_user: true                # 按用户分层
+        by_hour: true                # 按小时分层
+        by_job_type: true            # 按作业类型分层
+        by_success_status: true      # 按成功状态分层
+      
+      # 优先级权重
+      priority_weights:
+        success_jobs: 3.0            # 成功作业权重
+        long_duration: 2.0           # 长时间作业权重
+        diverse_jobs: 1.5            # 多样化作业权重
+        recent_jobs: 1.0             # 最近作业权重
+    
+    # 严重异常(日提交量10-100万) - 100%保留
+    severe_anomaly:
+      sampling_method: "no_sampling"  # 不采样
+      sampling_ratio: 1.0             # 100% 保留
+      enable_sampling: false          # 禁用采样
+      preserve_all: true              # 保留所有数据
+
+    # 中等异常(日提交量1-10万) - 100%保留
+    moderate_anomaly:
+      sampling_method: "no_sampling"  # 不采样
+      sampling_ratio: 1.0             # 100% 保留
+      enable_sampling: false          # 禁用采样
+      preserve_all: true              # 保留所有数据
+
+    # 正常数据(日提交量<1万) - 保留所有数据
+    normal_data:
+      sampling_method: "no_sampling"  # 不采样
+      sampling_ratio: 1.0             # 100% 保留
+      enable_sampling: false          # 禁用采样
+      preserve_all: true              # 保留所有数据
+      
+      # 脚本错误检测
+      script_error_detection:
+        enable: true
+        same_job_threshold: 1000     # 相同作业阈值
+        time_window_hours: 1         # 时间窗口(小时)
+        keep_samples: 200            # 保留样本数
+  
+  # 采样质量保证
+  quality_assurance:
+    # 代表性验证
+    representativeness:
+      time_distribution_check: true  # 时间分布检查
+      user_distribution_check: true  # 用户分布检查
+      job_type_distribution_check: true # 作业类型分布检查
+      resource_distribution_check: true # 资源分布检查
+      
+      # 分布差异阈值
+      distribution_tolerance: 0.1    # 分布容忍度
+    
+    # 信息保留度评估
+    information_preservation:
+      statistical_moments: true     # 统计矩保留
+      correlation_preservation: true # 相关性保留
+      pattern_preservation: true    # 模式保留
+      
+      # 保留度阈值
+      preservation_threshold: 0.8   # 保留度阈值
+    
+    # 采样偏差检测
+    bias_detection:
+      temporal_bias: true           # 时间偏差
+      user_bias: true               # 用户偏差
+      resource_bias: true           # 资源偏差
+      
+      # 偏差阈值
+      bias_threshold: 0.05          # 偏差阈值
+
+# 并行处理配置
+parallel_processing:
+  max_cores: 32
+  anomaly_detection_parallel: true  # 异常检测并行
+  sampling_parallel: true           # 采样并行
+  quality_check_parallel: true      # 质量检查并行
+
+# 输出配置
+output:
+  save_anomaly_details: true        # 保存异常详情
+  save_sampling_statistics: true    # 保存采样统计
+  save_quality_metrics: true        # 保存质量指标
+  generate_sampling_report: true    # 生成采样报告

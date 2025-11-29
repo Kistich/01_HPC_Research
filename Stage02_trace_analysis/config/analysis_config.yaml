@@ -1,0 +1,109 @@
+# 分析配置文件
+# 基于Helios项目的分析方法和可视化风格
+
+# 分析模块配置
+modules:
+  philly_comparison:
+    enabled: true
+    description: "与Philly数据集对比分析 (对应Helios的Philly comparison)"
+
+  data_overview:
+    enabled: true
+    description: "数据集基本统计和质量评估"
+
+  cluster_characterization:
+    enabled: true
+    description: "子集群特征分析 (对应Helios的cluster characterization)"
+
+  temporal_analysis:
+    enabled: true
+    description: "时间模式分析 (24小时/周期性，对应Helios的diurnal patterns)"
+
+  job_characterization:
+    enabled: true
+    description: "作业特征分析 (对应Helios的job characterization)"
+
+  user_characterization:
+    enabled: true
+    description: "用户行为分析 (对应Helios的user characterization)"
+
+  resource_utilization:
+    enabled: true
+    description: "资源利用率分析 (容量规划和效率分析)"
+
+# 可视化配置 (严格按照Helios风格)
+visualization:
+  # 图表尺寸 (参考Helios论文图表)
+  figure_size:
+    width: 10
+    height: 6
+    
+  # 颜色方案 (模仿Helios的配色)
+  colors:
+    primary: "#1f77b4"
+    secondary: "#ff7f0e"
+    accent: "#2ca02c"
+    warning: "#d62728"
+    
+  # 字体配置
+  fonts:
+    family: "Arial"
+    size: 12
+    title_size: 14
+    
+  # 输出格式
+  output_formats:
+    - "pdf"  # 主要输出格式，与Helios一致
+    - "png"  # 备用格式
+    
+  # DPI设置
+  dpi: 300
+
+# 统计分析配置
+statistics:
+  # CDF分析配置
+  cdf_analysis:
+    bins: 1000
+    percentiles: [50, 90, 95, 99]
+    
+  # 时间分析配置
+  temporal_analysis:
+    hour_bins: 24
+    day_bins: 7
+    
+  # 用户分析配置
+  user_analysis:
+    top_users_count: 20
+    heavy_user_threshold: 0.8  # 80%资源消耗
+
+# 数据处理配置
+data_processing:
+  # 数据清洗
+  cleaning:
+    remove_invalid_times: true
+    remove_zero_duration: true
+    min_duration_seconds: 1
+    
+  # exec_hosts解析配置
+  exec_hosts_parsing:
+    use_advanced_parser: true
+    fallback_to_simple: true
+    
+  # 作业状态映射
+  job_status_mapping:
+    completed: ["COMPLETED", "C"]
+    failed: ["FAILED", "F", "CANCELLED", "CA"]
+    running: ["RUNNING", "R"]
+
+# 输出配置
+output:
+  base_dir: "outputs"
+  subdirs:
+    figures: "figures"
+    reports: "reports"
+    data: "data"
+    
+  # 文件命名规则
+  naming:
+    timestamp_format: "%Y%m%d_%H%M%S"
+    include_timestamp: true

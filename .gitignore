@@ -1,0 +1,142 @@
+# ============================================================================
+# 01_HPC_Research 项目 .gitignore
+# ============================================================================
+# 策略：只上传代码、配置、文档，排除所有数据文件
+# ============================================================================
+
+# ============================================================================
+# 数据文件（主要排除项）
+# ============================================================================
+
+# 原始数据目录
+Stage00_HPC_raw_data/
+
+# 数据处理输出
+Stage01_data_filter_preprocess/full_processing_outputs/
+Stage01_data_filter_preprocess/stable_processing_outputs/
+Stage01_data_filter_preprocess/*.log
+
+# 大型 CSV 数据文件
+*.csv
+!**/example*.csv
+!**/sample*.csv
+!**/test*.csv
+
+# 大型数据文件
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.parquet
+
+# Excel 数据文件（通常很大）
+*.xlsx
+*.xls
+!**/template*.xlsx
+!**/config*.xlsx
+
+# 模型文件和结果
+**/results/
+**/outputs/
+**/checkpoints/
+**/models/
+!**/results/.gitkeep
+!**/outputs/.gitkeep
+
+# 预测模型数据
+Stage03_simulator_CES_DRS/5_Prediction_Model/1_data_preparation/cpu1_jobs_*.csv
+Stage03_simulator_CES_DRS/5_Prediction_Model/1_data_preparation/CPU1_*.csv
+Stage03_simulator_CES_DRS/5_Prediction_Model/1_data_preparation/node_sequences/
+
+# 仿真结果
+Stage03_simulator_CES_DRS/4_Simulator/simulation_results/
+Stage03_simulator_CES_DRS/4_Simulator/ces_experiment_results/
+Stage03_simulator_CES_DRS/4_Simulator/Results_Compare/
+
+# Trace 分析数据
+Stage02_trace_analysis/data/
+Stage02_trace_analysis/results/
+
+# ============================================================================
+# macOS 系统文件
+# ============================================================================
+.DS_Store
+**/.DS_Store
+._*
+**/._*
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# ============================================================================
+# IDE 和编辑器
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# ============================================================================
+# 日志和临时文件
+# ============================================================================
+*.log
+*.tmp
+*.temp
+.cache/
+*.bak
+*.backup
+
+# ============================================================================
+# Git
+# ============================================================================
+.git/
+*.orig
+
+# ============================================================================
+# 其他
+# ============================================================================
+# 压缩文件
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# 图片（如果很大）
+# *.png
+# *.jpg
+# *.jpeg
+# 注意：如果需要保留小的图片（如图表），可以注释掉上面的规则

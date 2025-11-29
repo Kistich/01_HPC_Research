@@ -1,0 +1,212 @@
+# 一期二期数据过滤配置
+generation_filter:
+  # 脚本特征配置
+  script_features:
+    # 一期特征模式
+    first_generation_patterns:
+      - "#BSUB"
+      - "jsub"
+      - "bsub"
+      - "LSF_"
+      - "UNISCHEDULER"
+      - "-q\\s+\\w+"  # LSF队列语法
+      - "-n\\s+\\d+"  # LSF CPU请求
+      - "-R\\s+\".*\""  # LSF资源请求
+    
+    # 二期特征模式
+    second_generation_patterns:
+      - "#SBATCH"
+      - "sbatch"
+      - "srun"
+      - "SLURM_"
+      - "--partition"
+      - "--ntasks"
+      - "--cpus-per-task"
+      - "--mem"
+      - "--gres"
+    
+    # 特征权重
+    feature_weights:
+      script_header: 3.0      # 脚本头部权重最高
+      command_type: 2.5       # 命令类型权重高
+      resource_syntax: 2.0    # 资源语法权重中等
+      environment_var: 1.5    # 环境变量权重较低
+      queue_syntax: 1.0       # 队列语法权重最低
+  
+  # 节点信息配置 - 节点命名优先级最高
+  node_classification:
+    # 管理节点模式
+    management_nodes:
+      - "mgmt.*"
+      - "login.*"
+      - "master.*"
+      - "head.*"
+
+    # 明确的二期节点模式 - 最高优先级，直接决定分类
+    definitive_second_generation_nodes:
+      - "cpu\\d+-.*"      # cpu1-, cpu2- 等
+      - "gpu\\d+-.*"      # gpu1-, gpu2- 等
+      - "bigmem\\d+-.*"   # bigmem1-, bigmem2- 等
+      - "bigmen\\d+-.*"   # bigmen1-, bigmen2- 等 (可能的拼写变体)
+      - "bigmem-.*"       # bigmem- 开头的节点
+
+    # 可能的一期节点模式 - 较低优先级
+    possible_first_generation_nodes:
+      - "supermicro.*"
+      - "c-node.*"
+      - "old-.*"
+      - "node\\d+.*"      # node001, node002 等传统命名
+      - "cn\\d+.*"        # cn001, cn002 等传统命名
+
+    # 其他可能的二期节点模式 - 中等优先级
+    possible_second_generation_nodes:
+      - "g-node.*"
+      - "gpu.*"
+      - "compute.*"
+      - "fat.*"           # fat节点
+      - "mem.*"           # 内存节点
+      - "hpc.*"           # hpc节点
+
+    # 明确的一期节点模式 - 需要排除的节点
+    excluded_first_generation_nodes:
+      - "training-.*"     # ASCEND-AI集群的训练节点
+      - "reasoning-.*"    # ASCEND-AI集群的推理节点
+
+    # 节点信息权重 - 大幅提高明确模式的权重
+    node_weights:
+      definitive_pattern: 15.0    # 明确模式权重极高，直接决定分类
+      possible_pattern: 3.0       # 可能模式权重较高
+      exec_hosts: 2.0             # 执行主机权重高
+      first_exec_host: 1.5        # 首个执行主机权重中等
+  
+  # 集群过滤配置
+  cluster_filtering:
+    # 需要排除的集群（一期集群）
+    excluded_clusters:
+      - "ASCEND-AI"       # 昇腾AI集群（一期）
+      - "ascend-ai"       # 昇腾AI集群（小写）
+
+    # 明确的二期集群
+    target_clusters:
+      - "HKUHPC-AI"       # 港大HPC-AI集群（二期）
+      - "hkuhpc-ai"       # 港大HPC-AI集群（小写）
+
+  # 分类决策配置
+  classification:
+    # 置信度阈值
+    confidence_thresholds:
+      high_confidence: 0.8    # 高置信度阈值
+      medium_confidence: 0.5  # 中等置信度阈值
+      low_confidence: 0.2     # 低置信度阈值
+    
+    # 分类策略 - 节点命名优先
+    decision_strategy:
+      prefer_node_naming: true        # 优先考虑节点命名规范
+      prefer_script_features: false   # 脚本特征作为辅助
+      require_node_consistency: false # 不强制要求节点一致性
+      handle_mixed_features: true     # 处理混合特征
+      node_naming_decisive: true      # 节点命名具有决定性作用
+    
+    # 输出配置
+    output_categories:
+      - "second_generation_high"      # 高置信度二期
+      - "second_generation_medium"    # 中等置信度二期
+      - "second_generation_low"       # 低置信度二期
+      - "first_generation"            # 一期数据
+      - "mixed_features"              # 混合特征
+      - "management_nodes"            # 管理节点
+      - "unknown_category"            # 未知类别
+
+# 并行处理配置
+parallel_processing:
+  max_cores: 32                     # 最大核心数
+  chunk_size_factor: 4              # 数据块大小因子
+  memory_limit_gb: 64               # 内存限制(GB)
+  
+# 进度监控配置
+progress_monitoring:
+  update_interval: 1.0              # 更新间隔(秒)
+  show_eta: true                    # 显示预估完成时间
+  show_speed: true                  # 显示处理速度
+
+# 集群资源配置
+cluster_management:
+  # 目标集群（二期）
+  target_clusters:
+    - "HKUHPC-AI"
+    - "hkuhpc-ai"
+
+  # 排除集群（一期）
+  excluded_clusters:
+    - "ASCEND-AI"
+    - "ascend-ai"
+
+# 资源计算配置
+resource_calculation:
+  # CPU集群配置
+  cpu_configs:
+    CPU1:
+      cores_per_node: 64
+      memory_gb: 512
+      cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    CPU2:
+      cores_per_node: 64
+      memory_gb: 512
+      cpu_spec: "2 * Intel(R) Xeon(R) Platinum 8358P CPU 32C @ 2.60GHz"
+    CPU3:
+      cores_per_node: 128
+      memory_gb: 512
+      cpu_spec: "2 * AMD EPYC 7763 64-Core Processor 2450 64C @ 2.45GHz"
+    BIGMEM:
+      cores_per_node: 96
+      memory_gb: 2048
+      cpu_spec: "4 * Intel(R) Xeon(R) Gold 6348H CPU 24C @ 2.30GHz"
+
+  # GPU集群配置
+  gpu_configs:
+    GPU1:
+      gpus_per_node: 8
+      gpu_type: "A800"
+      gpu_memory_gb: 80
+      cpu_cores_per_node: 64
+      memory_gb: 1024
+      gpu_spec: "8 * NVIDIA A800-SXM4-80GB"
+    GPU2:
+      gpus_per_node: 8
+      gpu_type: "A800"
+      gpu_memory_gb: 80
+      cpu_cores_per_node: 64
+      memory_gb: 2048
+      gpu_spec: "8 * NVIDIA A800-SXM4-80GB"
+    GPU3:
+      gpus_per_node: 8
+      gpu_type: "A40"
+      gpu_memory_gb: 48
+      cpu_cores_per_node: 64
+      memory_gb: 1024
+      gpu_spec: "8 * NVIDIA A40-48GB"
+
+# 作业状态映射配置
+job_status_mapping:
+  # Helios兼容状态映射
+  helios_status_map:
+    # 基于job_status_str
+    "DONE": "Pass"
+    "EXIT": "Failed"
+    "TIMEOUT": "Killed"
+    "FAILED": "Failed"
+    "KILLED": "Killed"
+    "CANCELLED": "Killed"
+
+  # 基于jstatus数值
+  jstatus_map:
+    32: "Pass"      # DONE
+    1: "Failed"     # EXIT
+    2: "Failed"     # FAILED
+    3: "Killed"     # KILLED
+    4: "Killed"     # TIMEOUT
+
+  # 基于exit_status
+  exit_status_rules:
+    success_codes: [0]
+    failure_codes: [1, 2, 130, 143]

@@ -1,0 +1,105 @@
+# 时间字段处理配置
+time_processing:
+  # 时间字段配置
+  time_fields:
+    required_fields:
+      - "submit_time"
+      - "start_time" 
+      - "end_time"
+    
+    optional_fields:
+      - "queue_time"
+      - "duration"
+    
+    # 时间格式配置
+    time_formats:
+      - "%Y-%m-%d %H:%M:%S"
+      - "%Y/%m/%d %H:%M:%S"
+      - "%Y-%m-%d %H:%M:%S.%f"
+      - "%Y/%m/%d %H:%M:%S.%f"
+      - "%Y%m%d %H:%M:%S"
+    
+    # 时区配置
+    timezone: "Asia/Shanghai"
+  
+  # submit_time估计配置
+  submit_time_estimation:
+    # 估计方法
+    estimation_methods:
+      user_pattern: true              # 基于用户模式估计
+      job_sequence: true              # 基于作业序列估计
+      batch_analysis: true            # 基于批次分析估计
+      cluster_load: false             # 基于集群负载估计(暂不启用)
+    
+    # 用户模式分析
+    user_pattern_analysis:
+      min_jobs_for_pattern: 10        # 建立模式的最小作业数
+      time_window_hours: 24           # 时间窗口(小时)
+      pattern_stability_threshold: 0.7 # 模式稳定性阈值
+      max_interval_hours: 48          # 最大时间间隔(小时)
+    
+    # 作业序列分析
+    job_sequence_analysis:
+      sequence_window: 100            # 序列窗口大小
+      trend_analysis_points: 20       # 趋势分析点数
+      outlier_threshold: 3.0          # 异常值阈值(标准差倍数)
+      interpolation_method: "linear"  # 插值方法
+    
+    # 批次分析
+    batch_analysis:
+      batch_detection_threshold: 10   # 批次检测阈值
+      batch_time_tolerance: 300       # 批次时间容忍度(秒)
+      batch_size_min: 5              # 最小批次大小
+      batch_size_max: 10000          # 最大批次大小
+    
+    # 估计质量评估
+    quality_assessment:
+      confidence_levels:
+        high: 0.9                     # 高置信度
+        medium: 0.7                   # 中等置信度
+        low: 0.5                      # 低置信度
+      
+      quality_factors:
+        method_consistency: 0.3       # 方法一致性权重
+        temporal_consistency: 0.3     # 时间一致性权重
+        user_pattern_match: 0.2       # 用户模式匹配权重
+        sequence_fit: 0.2             # 序列拟合权重
+  
+  # start_time和end_time处理
+  start_end_time_processing:
+    # 可恢复性分析
+    recoverability_analysis:
+      check_duration_field: true      # 检查duration字段
+      check_queue_time_field: true    # 检查queue_time字段
+      check_related_jobs: true        # 检查相关作业
+      
+      # 推断策略
+      inference_strategies:
+        from_duration: true           # 从duration推断
+        from_queue_time: true         # 从queue_time推断
+        from_similar_jobs: false      # 从相似作业推断(暂不启用)
+    
+    # 过滤策略
+    filtering_strategy:
+      remove_unrecoverable: true      # 移除不可恢复的记录
+      mark_inferred: true             # 标记推断的字段
+      preserve_partial: false         # 不保留部分缺失的记录
+    
+    # 时间逻辑验证
+    logic_validation:
+      check_time_order: true          # 检查时间顺序
+      max_queue_time_days: 30         # 最大排队时间(天)
+      max_duration_days: 365          # 最大运行时间(天) - 修改为365天，HPC作业可能运行很长时间
+      min_duration_seconds: 1         # 最小运行时间(秒)
+
+# 并行处理配置
+parallel_processing:
+  max_cores: 32
+  chunk_size_rows: 50000              # 每块行数
+  memory_efficient: true              # 内存高效模式
+  
+# 输出配置
+output:
+  save_estimation_details: true       # 保存估计详情
+  save_filtered_records: true         # 保存被过滤的记录
+  generate_quality_report: true       # 生成质量报告
