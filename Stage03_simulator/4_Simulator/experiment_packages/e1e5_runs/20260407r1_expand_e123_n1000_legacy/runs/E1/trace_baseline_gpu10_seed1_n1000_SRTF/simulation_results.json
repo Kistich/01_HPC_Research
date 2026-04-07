@@ -1,0 +1,893 @@
+{
+  "simulation_results": {
+    "config": {
+      "trace_file": "/Volumes/EXTERNAL_US/backup2/01_HPC_Research/Stage03_simulator/3_Trace_Generation/enhanced_traces_n1000/E1/trace_baseline_gpu10_seed1_n1000.csv",
+      "start_time": 0.0,
+      "end_time": null,
+      "time_scale": 1.0,
+      "cpu1_nodes": 4,
+      "cpu2_nodes": 0,
+      "cpu3_nodes": 0,
+      "gpu1_nodes": 2,
+      "gpu2_nodes": 0,
+      "gpu3_nodes": 0,
+      "bigmem_nodes": 0,
+      "cpu_nodes": 4,
+      "gpu_nodes": 2,
+      "scheduler_type": "SRTF",
+      "lambda_cost": 0.1,
+      "gamma_balance": 0.05,
+      "scheduling_window": 10,
+      "enable_preemption": false,
+      "max_events": 1000000,
+      "progress_interval": 10000,
+      "checkpoint_interval": 10000,
+      "random_seed": 42,
+      "output_directory": "/Volumes/EXTERNAL_US/backup2/01_HPC_Research/Stage03_simulator/4_Simulator/experiment_packages/e1e5_runs/20260407r1_expand_e123_n1000_legacy/runs/E1/trace_baseline_gpu10_seed1_n1000_SRTF",
+      "save_detailed_logs": false,
+      "save_energy_data": false,
+      "save_job_traces": false,
+      "enable_visualization": false,
+      "batch_size": 100,
+      "memory_limit_mb": 1024,
+      "metrics_collection_interval": 600.0,
+      "detailed_metrics": true,
+      "warmup_time": 0.0,
+      "cooldown_time": 0.0,
+      "enable_ces": false,
+      "use_lightgbm": false,
+      "lightgbm_model_path": null,
+      "use_prediction_csv": false,
+      "prediction_csv_path": null,
+      "ces_params": {},
+      "solver_timeout_seconds": 0.0,
+      "solve_trigger_mode": "event",
+      "event_refresh_interval_seconds": 60.0,
+      "cpgjs_variant": "engineering",
+      "cpgjs_guard_policy": "dynamic",
+      "cpgjs_guard_multi_node_threshold": 0.2,
+      "cpgjs_guard_hybrid_threshold": 0.1,
+      "cpgjs_v2_mode": "v2",
+      "alpha_fragmentation": 0.15,
+      "alpha_tail": 0.12,
+      "alpha_uncertainty": 0.1,
+      "tail_risk_threshold": 0.8,
+      "hybrid_baseline_blend": 0.7,
+      "guard_v2_s_low": 0.35,
+      "guard_v2_s_high": 0.6,
+      "guard_v2_uncertainty_weight": 0.3,
+      "guard_v2_preemption_weight": 0.3,
+      "guard_v2_fragmentation_weight": 0.25,
+      "guard_v2_priority_dispersion_weight": 0.15,
+      "runtime_estimation_mode": "estimated",
+      "runtime_estimator_variant": "static_lognormal",
+      "evaluation_regime": "static_est",
+      "runtime_error_distribution": "lognormal",
+      "runtime_error_cpu_sigma": 0.2,
+      "runtime_error_gpu_sigma": 0.3,
+      "runtime_error_hybrid_sigma": 0.4,
+      "runtime_error_seed": 1,
+      "runtime_history_window": 64,
+      "runtime_min_noise_scale": 0.45,
+      "runtime_bias_correction_mix": 0.35,
+      "runtime_cold_start_boost": 0.45,
+      "runtime_refinement_strength": 0.65,
+      "runtime_heteroskedasticity_strength": 0.12,
+      "runtime_heavy_tail_mix_prob": 0.03,
+      "runtime_heavy_tail_sigma_scale": 1.1,
+      "priority_mode": "disabled",
+      "priority_weight_levels": [
+        0.7,
+        1.0,
+        1.3,
+        1.6
+      ],
+      "priority_weight_probabilities": [
+        0.15,
+        0.55,
+        0.19999999999999998,
+        0.09999999999999999
+      ],
+      "priority_seed": 1,
+      "primary_lambda_energy": 0.001,
+      "primary_gamma_balance": 0.01,
+      "primary_phi_preemption": 0.1,
+      "primary_phi_grid": [
+        0.0,
+        0.05,
+        0.1,
+        0.2
+      ]
+    },
+    "simulation_state": {
+      "current_time": 422640.0,
+      "events_processed": 14760,
+      "jobs_arrived": 1000,
+      "jobs_completed": 1000,
+      "jobs_failed": 0,
+      "is_running": false,
+      "start_time": 1775537780.08928,
+      "end_time": 1775537790.4278378
+    },
+    "runtime_seconds": 10.338557958602905,
+    "performance_summary": {
+      "total_jobs": 1000,
+      "jobs_completed": 1000,
+      "jobs_failed": 0,
+      "completion_rate": 1.0,
+      "events_processed": 14760,
+      "simulation_time": 422640.0
+    },
+    "metrics_summary": {
+      "simulation_summary": {
+        "total_jobs": 1000,
+        "completed_jobs": 1000,
+        "failed_jobs": 0,
+        "completion_rate(%)": 100.0,
+        "simulation_duration(h)": 117.351446,
+        "makespan(h)": 117.351446
+      },
+      "job_performance": {
+        "avg_wait_time(h)": 5.550877,
+        "median_wait_time(h)": 0.01208,
+        "p95_wait_time(h)": 42.260261,
+        "avg_job_completion_time(h)": 8.53319,
+        "median_job_completion_time(h)": 0.388555,
+        "p95_job_completion_time(h)": 57.863784,
+        "throughput(jobs/hour)": 8.52
+      },
+      "resource_utilization": {
+        "avg_cpu_cpu_utilization(%) (per node avg)": 6.58,
+        "peak_cpu_cpu_utilization(%) (single node max)": 9.6,
+        "avg_gpu_cpu_utilization(%) (per node avg)": 2.48,
+        "peak_gpu_cpu_utilization(%) (single node max)": 8.6,
+        "avg_gpu_gpu_utilization(%) (per node avg)": 27.87,
+        "peak_gpu_gpu_utilization(%) (single node max)": 70.39
+      },
+      "energy_consumption": {
+        "cpu_nodes": {
+          "avg_total_power(kW) (4 CPUs)": 1.605352,
+          "peak_total_power(kW) (4 CPUs)": 1.648913,
+          "avg_static_power(kW) (4 CPUs)": 1.5104,
+          "avg_dynamic_power(kW) (4 CPUs)": 0.094952,
+          "peak_dynamic_power(kW) (4 CPUs)": 0.138513,
+          "total_energy(kWh) (4 CPUs)": 188.390358,
+          "static_energy(kWh) (4 CPUs)": 177.247624,
+          "dynamic_energy(kWh) (4 CPUs)": 11.142734
+        },
+        "gpu_nodes": {
+          "avg_total_power(kW) (2 GPUs)": 1.494985,
+          "peak_total_power(kW) (2 GPUs)": 3.610614,
+          "avg_static_power(kW) (2 GPUs)": 0.13782,
+          "avg_dynamic_power(kW) (2 GPUs)": 1.357165,
+          "peak_dynamic_power(kW) (2 GPUs)": 3.472794,
+          "total_energy(kWh) (2 GPUs)": 175.438686,
+          "static_energy(kWh) (2 GPUs)": 16.173376,
+          "dynamic_energy(kWh) (2 GPUs)": 159.26531,
+          "cpu_component": {
+            "avg_power(kW) (2 GPU CPUs)": 0.048051,
+            "peak_power(kW) (2 GPU CPUs)": 0.166804,
+            "energy(kWh) (2 GPU CPUs)": 5.638812
+          },
+          "gpu_component": {
+            "avg_power(kW) (2 GPUs)": 1.309115,
+            "peak_power(kW) (2 GPUs)": 3.30599,
+            "energy(kWh) (2 GPUs)": 153.626498
+          }
+        }
+      },
+      "_consistency_verification": {
+        "power_consistency": {
+          "cpu_power_consistency": {
+            "measured_total": 1605.3518223367582,
+            "static_power": 1510.4000000000003,
+            "dynamic_power": 94.95182233676799,
+            "calculated_total": 1605.3518223367682,
+            "difference": 1.000444171950221e-11,
+            "consistent": true,
+            "formula": "1605.352 = 1510.400 + 94.952 = 1605.352",
+            "difference_pct": 6.231930957626282e-13
+          },
+          "gpu_power_consistency": {
+            "measured_total": 1494.98529816301,
+            "static_power": 137.82000000000002,
+            "dynamic_power": 1357.1652981630095,
+            "calculated_total": 1494.9852981630095,
+            "difference": 4.547473508864641e-13,
+            "consistent": true,
+            "formula": "1494.985 = 137.820 + 1357.165 = 1494.985",
+            "difference_pct": 3.041818213498441e-14
+          },
+          "gpu_component_consistency": {
+            "measured_dynamic": 1357.1652981630095,
+            "cpu_component": 48.050641300411066,
+            "gpu_component": 1309.1146568626011,
+            "component_sum": 1357.1652981630123,
+            "difference": 2.7284841053187847e-12,
+            "consistent": true,
+            "formula": "1357.165 = 48.051 + 1309.115 = 1357.165",
+            "difference_pct": 2.0104287289189632e-13
+          },
+          "cluster_power_consistency": {
+            "measured_total": 3100.3371204998048,
+            "cpu_contribution": 1605.3518223367582,
+            "gpu_contribution": 1494.98529816301,
+            "calculated_total": 3100.3371204997684,
+            "difference": 3.637978807091713e-11,
+            "consistent": true,
+            "formula": "3100.337 = 1605.352 + 1494.985 = 3100.337",
+            "difference_pct": 1.1734139436117952e-12
+          }
+        },
+        "energy_consistency": {
+          "gpu_dynamic_energy_consistency": {
+            "measured_dynamic": 159265.31006323994,
+            "cpu_component_energy": 5638.812232972609,
+            "gpu_component_energy": 153626.49783026674,
+            "component_sum": 159265.31006323936,
+            "difference": 5.820766091346741e-10,
+            "consistent": true,
+            "formula": "159265.310 = 5638.812 + 153626.498 = 159265.310",
+            "difference_pct": 3.6547607818899627e-13
+          },
+          "cluster_total_energy_consistency": {
+            "measured_total": 363829.04386467976,
+            "cpu_contribution": 188390.35752765374,
+            "gpu_contribution": 175438.68633702604,
+            "calculated_total": 363829.04386467976,
+            "difference": 0.0,
+            "consistent": true,
+            "formula": "363829.044 = 188390.358 + 175438.686 = 363829.044",
+            "difference_pct": 0.0
+          }
+        },
+        "overall_consistent": true
+      }
+    },
+    "job_type_metrics": {
+      "CPU": {
+        "count": 0,
+        "avg_wait_time": 0.0,
+        "avg_job_completion_time": 0.0
+      },
+      "GPU": {
+        "count": 0,
+        "avg_wait_time": 0.0,
+        "avg_job_completion_time": 0.0
+      }
+    },
+    "cluster_final_state": {
+      "node_counts": {
+        "cpu1": 4,
+        "cpu2": 0,
+        "cpu3": 0,
+        "gpu1": 2,
+        "gpu2": 0,
+        "gpu3": 0,
+        "bigmem": 0,
+        "total": 6
+      },
+      "total_capacity": {
+        "cpu": 6.0,
+        "gpu": 2.0
+      },
+      "cluster_config": {
+        "cpu1": 4,
+        "cpu2": 0,
+        "cpu3": 0,
+        "gpu1": 2,
+        "gpu2": 0,
+        "gpu3": 0,
+        "bigmem": 0,
+        "total": 6
+      }
+    },
+    "scheduler_final_stats": {
+      "name": "SRTFScheduler",
+      "config": {},
+      "stats": {
+        "jobs_scheduled": 0,
+        "jobs_failed": 0,
+        "total_scheduling_time": 0.0,
+        "scheduling_calls": 0
+      },
+      "success_rate": 0.013563604778395695,
+      "cluster_info": {
+        "node_counts": {
+          "cpu1": 4,
+          "cpu2": 0,
+          "cpu3": 0,
+          "gpu1": 2,
+          "gpu2": 0,
+          "gpu3": 0,
+          "bigmem": 0,
+          "total": 6
+        },
+        "total_capacity": {
+          "cpu": 6.0,
+          "gpu": 2.0
+        },
+        "cluster_config": {
+          "cpu1": 4,
+          "cpu2": 0,
+          "cpu3": 0,
+          "gpu1": 2,
+          "gpu2": 0,
+          "gpu3": 0,
+          "bigmem": 0,
+          "total": 6
+        }
+      },
+      "scheduling_metrics": {
+        "total_jobs_processed": 443245,
+        "successful_schedules": 6012,
+        "failed_schedules": 437233,
+        "success_rate": 0.013563604778395695,
+        "job_type_stats": {
+          "CPU": {
+            "scheduled": 5242,
+            "failed": 388173,
+            "total_wait_time": 665014935.0904408
+          },
+          "GPU": {
+            "scheduled": 770,
+            "failed": 49060,
+            "total_wait_time": 37117343.89863337
+          }
+        }
+      },
+      "preemption_stats": {
+        "total_preemptions": 5706,
+        "total_overhead": 70411.20668794865
+      },
+      "queue_lengths": {
+        "job_queue": 0,
+        "waiting_queue": 0,
+        "preempted_queue": 0,
+        "running_jobs": 0
+      }
+    },
+    "energy_summary": {
+      "total_energy_kwh": 364.4249193026391,
+      "final_power_breakdown": {
+        "cpu1": 1510.4,
+        "cpu2": 0.0,
+        "cpu3": 0.0,
+        "gpu1": 137.8200000000021,
+        "gpu2": 0.0,
+        "gpu3": 0.0,
+        "bigmem": 0.0,
+        "total": 1648.2200000000023
+      }
+    },
+    "engine_runtime_stats": {
+      "preemptive_eval_skips": 0,
+      "completion_event_semantics": "strict_token_versioned_v1",
+      "completion_event_versioning_enabled": true
+    },
+    "primary_metric": {
+      "weights": {
+        "lambda_energy": 0.001,
+        "gamma_balance": 0.01,
+        "default_phi": 0.1,
+        "phi_grid": [
+          0.0,
+          0.05,
+          0.1,
+          0.2
+        ],
+        "context_switch_overhead": 5.0,
+        "alpha_fragmentation": 0.15,
+        "alpha_uncertainty": 0.1,
+        "alpha_tail": 0.12
+      },
+      "default_phi_key": "0.1",
+      "default": {
+        "objective_value": 52431.68641942928,
+        "total_utility": 59473.37466221307,
+        "energy_term_raw": 364.4249193026391,
+        "energy_cost": 0.36442491930263915,
+        "load_balance_term_raw": 0.0525909863209657,
+        "load_balance_penalty": 0.000525909863209657,
+        "preemption_term_raw": 70411.20668794865,
+        "preemption_penalty": 7041.120668794865,
+        "fragmentation_term_raw": 0.4220581653685861,
+        "fragmentation_penalty": 0.06330872480528792,
+        "uncertainty_term_raw": 0.3666985925959963,
+        "uncertainty_penalty": 0.03666985925959963,
+        "tail_risk_term_raw": 0.8553714641348309,
+        "tail_risk_penalty": 0.1026445756961797,
+        "total_preemptions": 5706,
+        "avg_gpu_utilization": 0.0,
+        "avg_cpu_utilization": 0.0
+      },
+      "by_phi": {
+        "0": {
+          "objective_value": 59472.807088224145,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 0.0,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.05": {
+          "objective_value": 55952.246753826716,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 3520.5603343974326,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.1": {
+          "objective_value": 52431.68641942928,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 7041.120668794865,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.2": {
+          "objective_value": 45390.565750634414,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 14082.24133758973,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        }
+      },
+      "legacy_default": {
+        "objective_value": 56618.72644221307,
+        "total_utility": 59473.37466221307,
+        "energy_cost": 1.6482200000000022,
+        "load_balance_penalty": 0.0,
+        "preemption_penalty": 2853.0,
+        "total_preemptions": 5706,
+        "avg_gpu_utilization": 0.0,
+        "avg_cpu_utilization": 0.0
+      },
+      "legacy_by_phi": {
+        "0": {
+          "objective_value": 59471.72644221307,
+          "total_utility": 59473.37466221307,
+          "energy_cost": 1.6482200000000022,
+          "load_balance_penalty": 0.0,
+          "preemption_penalty": 0.0,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.05": {
+          "objective_value": 58045.22644221307,
+          "total_utility": 59473.37466221307,
+          "energy_cost": 1.6482200000000022,
+          "load_balance_penalty": 0.0,
+          "preemption_penalty": 1426.5,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.1": {
+          "objective_value": 56618.72644221307,
+          "total_utility": 59473.37466221307,
+          "energy_cost": 1.6482200000000022,
+          "load_balance_penalty": 0.0,
+          "preemption_penalty": 2853.0,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.2": {
+          "objective_value": 53765.72644221307,
+          "total_utility": 59473.37466221307,
+          "energy_cost": 1.6482200000000022,
+          "load_balance_penalty": 0.0,
+          "preemption_penalty": 5706.0,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        }
+      },
+      "runtime_aligned_default": {
+        "objective_value": 52431.68641942928,
+        "total_utility": 59473.37466221307,
+        "energy_term_raw": 364.4249193026391,
+        "energy_cost": 0.36442491930263915,
+        "load_balance_term_raw": 0.0525909863209657,
+        "load_balance_penalty": 0.000525909863209657,
+        "preemption_term_raw": 70411.20668794865,
+        "preemption_penalty": 7041.120668794865,
+        "fragmentation_term_raw": 0.4220581653685861,
+        "fragmentation_penalty": 0.06330872480528792,
+        "uncertainty_term_raw": 0.3666985925959963,
+        "uncertainty_penalty": 0.03666985925959963,
+        "tail_risk_term_raw": 0.8553714641348309,
+        "tail_risk_penalty": 0.1026445756961797,
+        "total_preemptions": 5706,
+        "avg_gpu_utilization": 0.0,
+        "avg_cpu_utilization": 0.0
+      },
+      "runtime_aligned_by_phi": {
+        "0": {
+          "objective_value": 59472.807088224145,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 0.0,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.05": {
+          "objective_value": 55952.246753826716,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 3520.5603343974326,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.1": {
+          "objective_value": 52431.68641942928,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 7041.120668794865,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        },
+        "0.2": {
+          "objective_value": 45390.565750634414,
+          "total_utility": 59473.37466221307,
+          "energy_term_raw": 364.4249193026391,
+          "energy_cost": 0.36442491930263915,
+          "load_balance_term_raw": 0.0525909863209657,
+          "load_balance_penalty": 0.000525909863209657,
+          "preemption_term_raw": 70411.20668794865,
+          "preemption_penalty": 14082.24133758973,
+          "fragmentation_term_raw": 0.4220581653685861,
+          "fragmentation_penalty": 0.06330872480528792,
+          "uncertainty_term_raw": 0.3666985925959963,
+          "uncertainty_penalty": 0.03666985925959963,
+          "tail_risk_term_raw": 0.8553714641348309,
+          "tail_risk_penalty": 0.1026445756961797,
+          "total_preemptions": 5706,
+          "avg_gpu_utilization": 0.0,
+          "avg_cpu_utilization": 0.0
+        }
+      },
+      "secondary_context": {
+        "total_energy_kwh": 364.4249193026391,
+        "load_variance": 0.0
+      },
+      "runtime_aligned_context": {
+        "total_energy_kwh": 364.4249193026391,
+        "time_avg_load_variance": 0.0525909863209657,
+        "time_avg_fragmentation_pressure": 0.4220581653685861,
+        "time_avg_uncertainty_pressure": 0.3666985925959963,
+        "time_avg_tail_risk_pressure": 0.8553714641348309,
+        "preemption_overhead_seconds": 70411.20668794865,
+        "time_horizon_seconds": 422640.0
+      }
+    },
+    "completion_event_semantics": "strict_token_versioned_v1",
+    "runtime_estimation": {
+      "regime": "static_est",
+      "mode": "estimated",
+      "variant": "static_lognormal",
+      "distribution": "lognormal",
+      "cpu_sigma": 0.2,
+      "gpu_sigma": 0.3,
+      "hybrid_sigma": 0.4,
+      "error_seed": 1,
+      "history_window": 64,
+      "min_noise_scale": 0.45,
+      "bias_correction_mix": 0.35,
+      "cold_start_boost": 0.45,
+      "refinement_strength": 0.65,
+      "heteroskedasticity_strength": 0.12,
+      "heavy_tail_mix_prob": 0.03,
+      "heavy_tail_sigma_scale": 1.1,
+      "avg_error_multiplier": 1.0754758645000009,
+      "avg_uncertainty_sigma": 0.20999999999999705
+    }
+  },
+  "configuration": {
+    "trace_file": "/Volumes/EXTERNAL_US/backup2/01_HPC_Research/Stage03_simulator/3_Trace_Generation/enhanced_traces_n1000/E1/trace_baseline_gpu10_seed1_n1000.csv",
+    "start_time": 0.0,
+    "end_time": null,
+    "time_scale": 1.0,
+    "cpu1_nodes": 4,
+    "cpu2_nodes": 0,
+    "cpu3_nodes": 0,
+    "gpu1_nodes": 2,
+    "gpu2_nodes": 0,
+    "gpu3_nodes": 0,
+    "bigmem_nodes": 0,
+    "cpu_nodes": 4,
+    "gpu_nodes": 2,
+    "scheduler_type": "SRTF",
+    "lambda_cost": 0.1,
+    "gamma_balance": 0.05,
+    "scheduling_window": 10,
+    "enable_preemption": false,
+    "max_events": 1000000,
+    "progress_interval": 10000,
+    "checkpoint_interval": 10000,
+    "random_seed": 42,
+    "output_directory": "/Volumes/EXTERNAL_US/backup2/01_HPC_Research/Stage03_simulator/4_Simulator/experiment_packages/e1e5_runs/20260407r1_expand_e123_n1000_legacy/runs/E1/trace_baseline_gpu10_seed1_n1000_SRTF",
+    "save_detailed_logs": false,
+    "save_energy_data": false,
+    "save_job_traces": false,
+    "enable_visualization": false,
+    "batch_size": 100,
+    "memory_limit_mb": 1024,
+    "metrics_collection_interval": 600.0,
+    "detailed_metrics": true,
+    "warmup_time": 0.0,
+    "cooldown_time": 0.0,
+    "enable_ces": false,
+    "use_lightgbm": false,
+    "lightgbm_model_path": null,
+    "use_prediction_csv": false,
+    "prediction_csv_path": null,
+    "ces_params": {},
+    "solver_timeout_seconds": 0.0,
+    "solve_trigger_mode": "event",
+    "event_refresh_interval_seconds": 60.0,
+    "cpgjs_variant": "engineering",
+    "cpgjs_guard_policy": "dynamic",
+    "cpgjs_guard_multi_node_threshold": 0.2,
+    "cpgjs_guard_hybrid_threshold": 0.1,
+    "cpgjs_v2_mode": "v2",
+    "alpha_fragmentation": 0.15,
+    "alpha_tail": 0.12,
+    "alpha_uncertainty": 0.1,
+    "tail_risk_threshold": 0.8,
+    "hybrid_baseline_blend": 0.7,
+    "guard_v2_s_low": 0.35,
+    "guard_v2_s_high": 0.6,
+    "guard_v2_uncertainty_weight": 0.3,
+    "guard_v2_preemption_weight": 0.3,
+    "guard_v2_fragmentation_weight": 0.25,
+    "guard_v2_priority_dispersion_weight": 0.15,
+    "runtime_estimation_mode": "estimated",
+    "runtime_estimator_variant": "static_lognormal",
+    "evaluation_regime": "static_est",
+    "runtime_error_distribution": "lognormal",
+    "runtime_error_cpu_sigma": 0.2,
+    "runtime_error_gpu_sigma": 0.3,
+    "runtime_error_hybrid_sigma": 0.4,
+    "runtime_error_seed": 1,
+    "runtime_history_window": 64,
+    "runtime_min_noise_scale": 0.45,
+    "runtime_bias_correction_mix": 0.35,
+    "runtime_cold_start_boost": 0.45,
+    "runtime_refinement_strength": 0.65,
+    "runtime_heteroskedasticity_strength": 0.12,
+    "runtime_heavy_tail_mix_prob": 0.03,
+    "runtime_heavy_tail_sigma_scale": 1.1,
+    "priority_mode": "disabled",
+    "priority_weight_levels": [
+      0.7,
+      1.0,
+      1.3,
+      1.6
+    ],
+    "priority_weight_probabilities": [
+      0.15,
+      0.55,
+      0.19999999999999998,
+      0.09999999999999999
+    ],
+    "priority_seed": 1,
+    "primary_lambda_energy": 0.001,
+    "primary_gamma_balance": 0.01,
+    "primary_phi_preemption": 0.1,
+    "primary_phi_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.2
+    ]
+  },
+  "metrics": {
+    "simulation_summary": {
+      "total_jobs": 1000,
+      "completed_jobs": 1000,
+      "failed_jobs": 0,
+      "completion_rate(%)": 100.0,
+      "simulation_duration(h)": 117.351446,
+      "makespan(h)": 117.351446
+    },
+    "job_performance": {
+      "avg_wait_time(h)": 5.550877,
+      "median_wait_time(h)": 0.01208,
+      "p95_wait_time(h)": 42.260261,
+      "avg_job_completion_time(h)": 8.53319,
+      "median_job_completion_time(h)": 0.388555,
+      "p95_job_completion_time(h)": 57.863784,
+      "throughput(jobs/hour)": 8.52
+    },
+    "resource_utilization": {
+      "avg_cpu_cpu_utilization(%) (per node avg)": 6.58,
+      "peak_cpu_cpu_utilization(%) (single node max)": 9.6,
+      "avg_gpu_cpu_utilization(%) (per node avg)": 2.48,
+      "peak_gpu_cpu_utilization(%) (single node max)": 8.6,
+      "avg_gpu_gpu_utilization(%) (per node avg)": 27.87,
+      "peak_gpu_gpu_utilization(%) (single node max)": 70.39
+    },
+    "energy_consumption": {
+      "cpu_nodes": {
+        "avg_total_power(kW) (4 CPUs)": 1.605352,
+        "peak_total_power(kW) (4 CPUs)": 1.648913,
+        "avg_static_power(kW) (4 CPUs)": 1.5104,
+        "avg_dynamic_power(kW) (4 CPUs)": 0.094952,
+        "peak_dynamic_power(kW) (4 CPUs)": 0.138513,
+        "total_energy(kWh) (4 CPUs)": 188.390358,
+        "static_energy(kWh) (4 CPUs)": 177.247624,
+        "dynamic_energy(kWh) (4 CPUs)": 11.142734
+      },
+      "gpu_nodes": {
+        "avg_total_power(kW) (2 GPUs)": 1.494985,
+        "peak_total_power(kW) (2 GPUs)": 3.610614,
+        "avg_static_power(kW) (2 GPUs)": 0.13782,
+        "avg_dynamic_power(kW) (2 GPUs)": 1.357165,
+        "peak_dynamic_power(kW) (2 GPUs)": 3.472794,
+        "total_energy(kWh) (2 GPUs)": 175.438686,
+        "static_energy(kWh) (2 GPUs)": 16.173376,
+        "dynamic_energy(kWh) (2 GPUs)": 159.26531,
+        "cpu_component": {
+          "avg_power(kW) (2 GPU CPUs)": 0.048051,
+          "peak_power(kW) (2 GPU CPUs)": 0.166804,
+          "energy(kWh) (2 GPU CPUs)": 5.638812
+        },
+        "gpu_component": {
+          "avg_power(kW) (2 GPUs)": 1.309115,
+          "peak_power(kW) (2 GPUs)": 3.30599,
+          "energy(kWh) (2 GPUs)": 153.626498
+        }
+      }
+    },
+    "_consistency_verification": {
+      "power_consistency": {
+        "cpu_power_consistency": {
+          "measured_total": 1605.3518223367582,
+          "static_power": 1510.4000000000003,
+          "dynamic_power": 94.95182233676799,
+          "calculated_total": 1605.3518223367682,
+          "difference": 1.000444171950221e-11,
+          "consistent": true,
+          "formula": "1605.352 = 1510.400 + 94.952 = 1605.352",
+          "difference_pct": 6.231930957626282e-13
+        },
+        "gpu_power_consistency": {
+          "measured_total": 1494.98529816301,
+          "static_power": 137.82000000000002,
+          "dynamic_power": 1357.1652981630095,
+          "calculated_total": 1494.9852981630095,
+          "difference": 4.547473508864641e-13,
+          "consistent": true,
+          "formula": "1494.985 = 137.820 + 1357.165 = 1494.985",
+          "difference_pct": 3.041818213498441e-14
+        },
+        "gpu_component_consistency": {
+          "measured_dynamic": 1357.1652981630095,
+          "cpu_component": 48.050641300411066,
+          "gpu_component": 1309.1146568626011,
+          "component_sum": 1357.1652981630123,
+          "difference": 2.7284841053187847e-12,
+          "consistent": true,
+          "formula": "1357.165 = 48.051 + 1309.115 = 1357.165",
+          "difference_pct": 2.0104287289189632e-13
+        },
+        "cluster_power_consistency": {
+          "measured_total": 3100.3371204998048,
+          "cpu_contribution": 1605.3518223367582,
+          "gpu_contribution": 1494.98529816301,
+          "calculated_total": 3100.3371204997684,
+          "difference": 3.637978807091713e-11,
+          "consistent": true,
+          "formula": "3100.337 = 1605.352 + 1494.985 = 3100.337",
+          "difference_pct": 1.1734139436117952e-12
+        }
+      },
+      "energy_consistency": {
+        "gpu_dynamic_energy_consistency": {
+          "measured_dynamic": 159265.31006323994,
+          "cpu_component_energy": 5638.812232972609,
+          "gpu_component_energy": 153626.49783026674,
+          "component_sum": 159265.31006323936,
+          "difference": 5.820766091346741e-10,
+          "consistent": true,
+          "formula": "159265.310 = 5638.812 + 153626.498 = 159265.310",
+          "difference_pct": 3.6547607818899627e-13
+        },
+        "cluster_total_energy_consistency": {
+          "measured_total": 363829.04386467976,
+          "cpu_contribution": 188390.35752765374,
+          "gpu_contribution": 175438.68633702604,
+          "calculated_total": 363829.04386467976,
+          "difference": 0.0,
+          "consistent": true,
+          "formula": "363829.044 = 188390.358 + 175438.686 = 363829.044",
+          "difference_pct": 0.0
+        }
+      },
+      "overall_consistent": true
+    }
+  },
+  "export_timestamp": 1775537790.446521
+}

@@ -1,0 +1,8 @@
+{
+  "legacy_run_id": "20260407r1_expand_e123_n100_legacy",
+  "legacy_all_results_path": "/Volumes/EXTERNAL_US/backup2/01_HPC_Research/Stage03_simulator/4_Simulator/experiment_packages/e1e5_runs/20260407r1_expand_e123_n100_legacy/all_results.json",
+  "all_results_sha256": "ae09d2581c50f18559fe3d4f24f45d095c7c9eb203629f036a30a67a1f2a8358",
+  "total_records": 42,
+  "ok_records": 42,
+  "failure_records": 56
+}
